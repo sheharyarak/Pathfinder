@@ -13,7 +13,7 @@ unsigned int	**_map = nullptr;
 void	generateArray();
 public:
 	Map(){}
-	~Map();
+	// ~Map();
 	void	readMap(std::string filename);
 	void	printMap();
 	int		height()	const;

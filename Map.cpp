@@ -11,15 +11,15 @@ void	Map::generateArray()
 	}
 }
 
-Map::~Map()
-{
-	for(int i = 0; i < _height; i++)
-	{
-		delete [] _map[i];
-	}
-	delete [] _map;
-	delete this;
-}
+// Map::~Map()
+// {
+// 	for(int i = 0; i < _height; i++)
+// 	{
+// 		delete [] _map[i];
+// 	}
+// 	delete [] _map;
+// 	delete this;
+// }
 
 int		Map::height() const
 {
