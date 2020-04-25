@@ -58,6 +58,7 @@ void	Map::readMap(std::string filename)
 			}
 		}
 	}
+	in.close();
 }
 void	Map::printMap()
 {

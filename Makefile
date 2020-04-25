@@ -1,7 +1,7 @@
 CC:=g++
 EXE:=Pathfinder.exe
 MEXE:=MapTest.exe
-IEXE:=InvertoryTest.exe
+IEXE:=InventoryTest.exe
 CEXE:=CartTest.exe
 PEXE:=PathFinderTest.exe
 CFLAGS:=-Wall

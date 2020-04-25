@@ -1,0 +1,29 @@
+0	P	#Path
+1	X	# Wall or not a Path
+2	I	# Entrance or in route
+3	O	#Exit or out route
+4	B	# bathroom
+24	A	#item 1
+22	C	#item2
+20	D	#
+25	E
+21	F
+23	G
+65	H
+67	J
+59	K
+63	L
+69	M
+62	N
+56	Q
+457	R
+46	S
+33	T
+75	U
+98	V
+231	W
+4	Y
+76	Z
+35	a
+643	b
+57	c
