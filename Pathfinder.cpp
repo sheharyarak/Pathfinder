@@ -12,7 +12,21 @@ Path	Pathfinder::path()	const
 {
 	return _path;
 }
-
+void	Pathfinder::readMap(std::string filename)
+{
+	_map.readMap(filename);
+	_checked = new bool*[_map.height()];
+	for(unsigned int i = 0; i < _map.height(); i++)
+	{
+		_checked[i] = new bool[_map.width()];
+	}
+}
+Path	Pathfinder::find_path(Coords pos, Coords end)
+{
+	
+}
+bool	Pathfinder::out_of_bounds(Coords pos);
+bool**	Pathfinder::check(Coords pos);
 /*
  * //TODO: Make a function that finds the shortest path
  * Approach: Recursion - Brute force
@@ -37,10 +51,10 @@ Path	Pathfinder::path()	const
 	create new empty Path
 	save current coord in Path
 
-	Check if current coord is a valid position on the map.
-		- if false: return an empty Path
 	Check if Point B was reached
 		- if true: return the Path
+	Check if current coord is a valid position on the map.
+		- if false: return an empty Path
 
 	Create a container of paths
 	add the path returned by the recursive call of the function to the container
