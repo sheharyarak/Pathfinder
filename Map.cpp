@@ -36,8 +36,8 @@ void	Map::readMap(std::string filename)
 	in.open(filename);
 	if(!in.is_open())
 	{
-		std::cerr << "Error opening file." << std::endl;
-		return;
+		std::cerr << "Could not open file to read map." << std::endl;
+		exit(-2);
 	}
 	in >> _width >> _height;
 	generateArray();

@@ -14,6 +14,11 @@ void			Inventory::readInventory(std::string filename)
 	std::ifstream	in(filename);
 	std::string		line, item_name;
 	unsigned int	item_num;
+	if(!in.is_open())
+	{
+		std::cerr << "Could not open file to read inventory." << std::endl;
+		exit(-3);
+	}
 	while(!in.eof())
 	{
 		item_name = "";
