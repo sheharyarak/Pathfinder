@@ -4,9 +4,9 @@
 #include <string>
 #include <sstream>
 
-std::string&	Inventory::operator[](int i)
+unsigned int&	Inventory::operator[](std::string key)
 {
-	return inventory[i];
+	return inventory[key];
 }
 void			Inventory::readInventory(std::string filename)
 {
@@ -36,7 +36,7 @@ void			Inventory::readInventory(std::string filename)
 				break;
 			item_name += line;
 		}
-		inventory[item_num] = item_name;
+		inventory[item_name] = item_num;
 		ss.clear();
 	}
 	in.close();

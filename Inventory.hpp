@@ -7,10 +7,10 @@
 class Inventory
 {
 private:
-	std::map<int, std::string> inventory;
+	std::map<std::string, unsigned int> inventory;
 public:
 	Inventory(){}
-	std::string&	operator[](int i);
+	unsigned int&	operator[](const std::string key);
 	void			readInventory(std::string filename);
 	void			to_string();
 };

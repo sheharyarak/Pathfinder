@@ -75,3 +75,8 @@ void	Map::printMap()
 		}
 	}
 }
+unsigned	int		Map::at_coord(unsigned int x, unsigned int y) const
+{
+
+	return _map[y][x];
+}
