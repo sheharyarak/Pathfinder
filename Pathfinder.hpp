@@ -27,7 +27,7 @@ public:
 	void	readMap(std::string filename);
 	void	readInventory(std::string filename);
 	void	readList(std::string	filename);
-	Path	find_path(Coords pos, Coords end, bool **checked = nullptr);
+	Path	find_path(Coords pos, Coords end, bool **checked = nullptr/*, std::string dir=""*/);
 	bool	out_of_bounds(Coords pos, bool**checked);
 	bool	**check(Coords pos, bool **checked);
 };

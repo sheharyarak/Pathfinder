@@ -1,6 +1,7 @@
 #include "Pathfinder.hpp"
 #include <algorithm>
 #include <iostream>
+#include <string>
 
 Map		Pathfinder::map()	const
 {
@@ -17,6 +18,8 @@ void	Pathfinder::readMap(std::string filename)
 	for(unsigned int i = 0; i < _map->height(); i++)
 	{
 		_checked[i] = new bool[_map->width()];
+		for(int j = 0; j < _map->width(); j++)
+			_checked[i][j] = false;
 	}
 }
 
@@ -25,37 +28,57 @@ bool	sort_by_size(Path left, Path right)
 	return left.size() < right.size();
 }
 
-Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked)
+Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked/*, std::string dir*/)
 {
 	//	if default argument
+	// std::cout << "pos.first=" << pos.first << ", pos.second=" << pos.second << std::endl;
 	if(checked == nullptr)
+	{
+		std::cout << "checked = _checked" << std::endl;
 		checked = _checked;
-	Path final = Path();
+	}
+	Path final;
 	final.push_back(pos);
 	//	if the end point is reached return the path
-	if(pos == end) return final;
+	if(pos == end) 
+	{
+		std::cout << "pos == end; "<< coord_to_string(pos) << "==" << coord_to_string(end) << std::endl;
+		return final;
+	}
 	//	if path leads to out of bounds return an empty path
-	if(out_of_bounds(pos, checked)) return Path();
+	if(out_of_bounds(pos, checked))
+	{
+		std::cout << "out of bounds: " << coord_to_string(pos) << std::endl;
+		return Path();
+	}
 	std::vector<Path> paths;
 	//	right
-	paths.push_back(find_path(Coords(pos.first+1,pos.second), end, check(Coords(pos.first+1,pos.second), checked)));
+	paths.push_back(find_path(Coords(pos.first+1,pos.second), end, check(Coords(pos.first+1,pos.second), checked)/*, dir+"r"*/));
 	//	up
-	paths.push_back(find_path(Coords(pos.first+1,pos.second), end, check(Coords(pos.first,pos.second+1), checked)));
+	paths.push_back(find_path(Coords(pos.first-1,pos.second), end, check(Coords(pos.first-1,pos.second), checked)/*, dir+"l"*/));
 	//	left
-	paths.push_back(find_path(Coords(pos.first+1,pos.second), end, check(Coords(pos.first-1,pos.second), checked)));
+	paths.push_back(find_path(Coords(pos.first,pos.second+1), end, check(Coords(pos.first,pos.second+1), checked)/*, dir+"u"*/));
 	//	down
-	paths.push_back(find_path(Coords(pos.first+1,pos.second), end, check(Coords(pos.first,pos.second-1), checked)));
+	paths.push_back(find_path(Coords(pos.first,pos.second-1), end, check(Coords(pos.first,pos.second-1), checked)/*, dir+"d"*/));
 	//	remove empty paths
 	std::string directions[] = {"up", "left", "down", "right"};
+	std::cout << "paths.size()=" << paths.size() << std::endl;
+	int j = 0;
 	for(int i = 0; i < paths.size(); i++)
 	{
 		//! NOT ENTERING THE LOOP
-		std::cout << i;
+		// std::cout << i;
 		if(paths[i].size() == 0) 
 		{
-			std::cout << "found empty path at index " << directions[i] << std::endl;
+			std::cout << "found empty path at index " << directions[j] << std::endl;
 			paths.erase(paths.begin()+i);
+			i--;
 		}
+		else
+		{
+			std::cout << "printing non empty path at " << directions[j] <<": " << path_to_string(paths[i]) << std::endl;
+		}
+		j++;
 	}
 	//	sort by size in ascending order
 	std::sort(paths.begin(), paths.end(), sort_by_size);
@@ -64,16 +87,25 @@ Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked)
 	{
 		final.push_back(paths[0][i]);
 	}
+	std::cout << "returning path: " << path_to_string(final) << std::endl;
 	return final;
 }
 bool	Pathfinder::out_of_bounds(Coords pos, bool** checked)
 {
 	//	make sure coords are within the map
-	if(!(pos.first < 0 || pos.second < 0 || pos.first >= _map->width() || pos.second >= _map->height())) return true;
+	if(pos.first < 0 || pos.second < 0 || pos.first >= _map->width() || pos.second >= _map->height())
+	{
+		std::cout << "outside map" << std::endl;
+		return true;
+	}
 	//	make sure its a walking path
 	//if(_map->at_coord(pos.first, pos.second) != 0) return true;
 	//	make sure the path hasn't been visited before
-	if(checked[pos.second][pos.first])	return true;
+	if(checked[pos.second][pos.first])
+	{
+		std::cout << "checked["<<pos.second<<"]["<<pos.first<<"]: "<<std::boolalpha << checked[pos.second][pos.first] << std::endl;
+		return true;
+	}
 	return false;
 }
 bool**	Pathfinder::check(Coords pos, bool** checked)
@@ -136,11 +168,16 @@ bool**	Pathfinder::check(Coords pos, bool** checked)
 std::string		coord_to_string(Coords coord)
 {
 	std::string str = "";
-	str += "(";
-	str += coord.first;
-	str += ", ";
-	str += coord.second;
-	str += ")";
+	if(coord == Coords())
+		str = "empty coord";
+	else
+	{
+		str += "(";
+		str += std::to_string(coord.first);
+		str += ", ";
+		str += std::to_string(coord.second);
+		str += ")";
+	}
 	return str;
 }
 
