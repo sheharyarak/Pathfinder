@@ -12,7 +12,7 @@ COBJS:= Cart.o CartTest.o
 POBJS:= Pathfinder.o PathfinderTest.o Map.o
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) $(THREADS) -MD -MP $< -c -o $@
+	$(CC) $(CFLAGS) $(THREADS) -MD -MP $< -c -g -o $@
 
 $(EXE): $(OBJS)
 	$(CC) $^ $(THREADS) $(MAGICK) -o $@

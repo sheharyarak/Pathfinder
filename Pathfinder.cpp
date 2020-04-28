@@ -30,13 +30,7 @@ bool	sort_by_size(Path left, Path right)
 
 Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked/*, std::string dir*/)
 {
-	//	if default argument
 	// std::cout << "pos.first=" << pos.first << ", pos.second=" << pos.second << std::endl;
-	if(checked == nullptr)
-	{
-		std::cout << "checked = _checked" << std::endl;
-		checked = _checked;
-	}
 	Path final;
 	final.push_back(pos);
 	//	if the end point is reached return the path
@@ -46,64 +40,86 @@ Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked/*, std::string
 		return final;
 	}
 	//	if path leads to out of bounds return an empty path
-	if(out_of_bounds(pos, checked))
+	if(checked != nullptr && out_of_bounds(pos, checked))
 	{
-		std::cout << "out of bounds: " << coord_to_string(pos) << std::endl;
+		// std::cout << "out of bounds: " << coord_to_string(pos) << std::endl;
 		return Path();
+	}
+	//	if default argument
+	if(checked == nullptr)
+	{
+		// std::cout << "checked = _checked" << std::endl;
+		checked = _checked;
 	}
 	std::vector<Path> paths;
 	//	right
-	paths.push_back(find_path(Coords(pos.first+1,pos.second), end, check(Coords(pos.first+1,pos.second), checked)/*, dir+"r"*/));
+	paths.push_back(find_path(Coords(pos.first+1,pos.second), end, check(pos, checked)/*, dir+"r"*/));
 	//	up
-	paths.push_back(find_path(Coords(pos.first-1,pos.second), end, check(Coords(pos.first-1,pos.second), checked)/*, dir+"l"*/));
+	paths.push_back(find_path(Coords(pos.first-1,pos.second), end, check(pos, checked)/*, dir+"l"*/));
 	//	left
-	paths.push_back(find_path(Coords(pos.first,pos.second+1), end, check(Coords(pos.first,pos.second+1), checked)/*, dir+"u"*/));
+	paths.push_back(find_path(Coords(pos.first,pos.second+1), end, check(pos, checked)/*, dir+"u"*/));
 	//	down
-	paths.push_back(find_path(Coords(pos.first,pos.second-1), end, check(Coords(pos.first,pos.second-1), checked)/*, dir+"d"*/));
+	paths.push_back(find_path(Coords(pos.first,pos.second-1), end, check(pos, checked)/*, dir+"d"*/));
 	//	remove empty paths
-	std::string directions[] = {"up", "left", "down", "right"};
-	std::cout << "paths.size()=" << paths.size() << std::endl;
-	int j = 0;
+	// std::string directions[] = {"up", "left", "down", "right"};
+	// std::cout << "paths.size()=" << paths.size() << std::endl;
+	// int j = 0;
 	for(int i = 0; i < paths.size(); i++)
 	{
-		//! NOT ENTERING THE LOOP
+		//**// //! NOT ENTERING THE LOOP
 		// std::cout << i;
+
 		if(paths[i].size() == 0) 
 		{
-			std::cout << "found empty path at index " << directions[j] << std::endl;
+			// std::cout << "found empty path at index " << directions[j] << std::endl;
 			paths.erase(paths.begin()+i);
 			i--;
 		}
-		else
-		{
-			std::cout << "printing non empty path at " << directions[j] <<": " << path_to_string(paths[i]) << std::endl;
-		}
-		j++;
+		// else
+		// {
+			// std::cout << "printing non empty path at " << directions[j] <<": " << path_to_string(paths[i]) << std::endl;
+		// }
+		// j++;
 	}
 	//	sort by size in ascending order
 	std::sort(paths.begin(), paths.end(), sort_by_size);
+	// std::cout <<"============\nsorted paths\n===========\n";
+	// for(Path p: paths)
+	// 	std::cout<<path_to_string(p)<<std::endl;
+	// std::cout <<"============\n";
 	//	add all elements of the shortest path to the final path
 	for(int i = 0; i < paths[0].size(); i++)
 	{
 		final.push_back(paths[0][i]);
 	}
-	std::cout << "returning path: " << path_to_string(final) << std::endl;
-	return final;
+	//only return path if end is found
+	if(final[final.size()-1] == end)
+	{
+		std::cout << "returning path: " << path_to_string(final) << std::endl;
+		return final;
+	}
+	//return empty path
+	else
+	{
+		std::cout << "hit a dead end at: " << path_to_string(final) << std::endl;
+		return Path();
+	}
+	
 }
 bool	Pathfinder::out_of_bounds(Coords pos, bool** checked)
 {
 	//	make sure coords are within the map
 	if(pos.first < 0 || pos.second < 0 || pos.first >= _map->width() || pos.second >= _map->height())
 	{
-		std::cout << "outside map" << std::endl;
+		// std::cout << "outside map" << std::endl;
 		return true;
 	}
 	//	make sure its a walking path
-	//if(_map->at_coord(pos.first, pos.second) != 0) return true;
+	if(_map->at_coord(pos.first, pos.second) != 0) return true;
 	//	make sure the path hasn't been visited before
+	// std::cout << "checked["<<pos.second<<"]["<<pos.first<<"]: "<<std::boolalpha << checked[pos.second][pos.first] << std::endl;
 	if(checked[pos.second][pos.first])
 	{
-		std::cout << "checked["<<pos.second<<"]["<<pos.first<<"]: "<<std::boolalpha << checked[pos.second][pos.first] << std::endl;
 		return true;
 	}
 	return false;
@@ -122,7 +138,9 @@ bool**	Pathfinder::check(Coords pos, bool** checked)
 			map[i][j] = checked[i][j];
 		}
 	}
+
 	map[pos.second][pos.first] = true;
+	// std::cout << "marked as checked["<<pos.second<<"]["<<pos.first<<"]: "<<std::boolalpha << map[pos.second][pos.first] << std::endl;
 	return map;
 }
 /*

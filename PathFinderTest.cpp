@@ -1,10 +1,10 @@
 #include "Pathfinder.hpp"
 
-int main()
+int main(int argc, char* argv[])
 {
 	Pathfinder p;
 	p.readMap("map.txt");
-	Coords start(1,1), end(4,2);
+	Coords start(1,1), end(4, 3);
 	std::cout << "Starting find path." << std::endl;
 	Path path = p.find_path(start, end);
 	std::cout << "Starting output." << std::endl;
