@@ -30,13 +30,14 @@ bool	sort_by_size(Path left, Path right)
 
 Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked/*, std::string dir*/)
 {
-	// std::cout << "pos.first=" << pos.first << ", pos.second=" << pos.second << std::endl;
+	// creates path to be returned
 	Path final;
+	// we add the current position to the path
 	final.push_back(pos);
 	//	if the end point is reached return the path
 	if(pos == end) 
 	{
-		std::cout << "pos == end; "<< coord_to_string(pos) << "==" << coord_to_string(end) << std::endl;
+		// std::cout << "pos == end; "<< coord_to_string(pos) << "==" << coord_to_string(end) << std::endl;
 		return final;
 	}
 	//	if path leads to out of bounds return an empty path

@@ -15,15 +15,15 @@ POBJS:= Pathfinder.o PathfinderTest.o Map.o
 	$(CC) $(CFLAGS) $(THREADS) -MD -MP $< -c -g -o $@
 
 $(EXE): $(OBJS)
-	$(CC) $^ $(THREADS) $(MAGICK) -o $@
+	$(CC) $^ -o $@
 $(MEXE): $(MOBJS)
-	$(CC) $^ $(THREADS) $(MAGICK) -o $@
+	$(CC) $^ -o $@
 $(IEXE): $(IOBJS)
-	$(CC) $^ $(THREADS) $(MAGICK) -o $@
+	$(CC) $^ -o $@
 $(CEXE): $(COBJS)
-	$(CC) $^ $(THREADS) $(MAGICK) -o $@
+	$(CC) $^ -o $@
 $(PEXE): $(POBJS)
-	$(CC) $^ $(THREADS) $(MAGICK) -o $@
+	$(CC) $^ -o $@
 
 clean:
 	rm -f $(OBJS) $(EXE)
