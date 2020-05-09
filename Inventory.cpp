@@ -3,8 +3,9 @@
 #include <iomanip>
 #include <string>
 #include <sstream>
+#include "Strings.hpp"
 
-unsigned int&	Inventory::operator[](std::string key)
+size_t&	Inventory::operator[](std::string key)
 {
 	return inventory[key];
 }
@@ -13,7 +14,7 @@ void			Inventory::readInventory(std::string filename)
 	std::stringstream	ss;
 	std::ifstream	in(filename);
 	std::string		line, item_name;
-	unsigned int	item_num;
+	size_t	item_num;
 	if(!in.is_open())
 	{
 		std::cerr << "Could not open file to read inventory." << std::endl;
@@ -23,19 +24,23 @@ void			Inventory::readInventory(std::string filename)
 	{
 		item_name = "";
 		std::getline(in, line);
-		std::cout << "read line: " << line << std::endl;
+		// std::cout << "read line: " << line << std::endl;
 		ss.str(line);
 		ss.seekg(0, ss.beg);
 		ss >> item_num;
 		
-		while(!ss.eof())
+		while(ss >> line)
 		{
-			ss >> line;
-			std::cout << "read word: " << line << std::endl;
+			// std::cout << "read word: " << line << std::endl;
 			if(line[0] == '#')
 				break;
-			item_name += line;
+			item_name += line + " ";
 		}
+		// std::cout << "read item: " << item_name << std::endl;
+		trim(item_name);
+		// std::cout  << item_num << " - " << item_name << " is " << item_name.length() << " characters long." << std::endl;
+		if(max_item_length < item_name.length())
+			max_item_length = item_name.length();
 		inventory[item_name] = item_num;
 		ss.clear();
 	}
@@ -45,7 +50,7 @@ void			Inventory::to_string()
 {
 	for(auto iter = inventory.begin(); iter != inventory.end(); iter++)
 	{
-		std::cout << std::setw(10) << iter->first << "\t";
+		std::cout << std::setw(max_item_length+3) << iter->first << "\t";
 		std::cout << iter->second << std::endl;
 	}
 }

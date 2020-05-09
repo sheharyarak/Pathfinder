@@ -5,14 +5,14 @@ IEXE:=InventoryTest.exe
 CEXE:=CartTest.exe
 PEXE:=PathfinderTest.exe
 CFLAGS:=-Wall
-OBJS:= Cart.o Inventory.o Map.o Pathfinder.o Main.o
+OBJS:= Cart.o Inventory.o Map.o Pathfinder.o Main.o Strings.o
 MOBJS:= Map.o MapTest.o
-IOBJS:= Inventory.o InventoryTest.o
+IOBJS:= Inventory.o InventoryTest.o Strings.o
 COBJS:= Cart.o CartTest.o
-POBJS:= Pathfinder.o PathfinderTest.o Map.o
+POBJS:= Pathfinder.o PathfinderTest.o Map.o Strings.o
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) $(THREADS) -MD -MP $< -c -g -o $@
+	$(CC) $(CFLAGS) -MD -MP $< -c -g -o $@
 
 $(EXE): $(OBJS)
 	$(CC) $^ -o $@
@@ -22,7 +22,7 @@ $(IEXE): $(IOBJS)
 	$(CC) $^ -o $@
 $(CEXE): $(COBJS)
 	$(CC) $^ -o $@
-$(PEXE): $(POBJS)
+$(PEXE): $(OBJS)
 	$(CC) $^ -o $@
 
 clean:

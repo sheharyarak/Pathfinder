@@ -10,8 +10,10 @@ private:
 	std::vector<std::string>	_list;
 public:
 	void						readList(std::string	filename);
+	void						add_to_cart(std::string item);
+	void						remove_item(std::string item);
 	std::string&				operator[](int i);
-	std::vector<std::string>&	list() const;
+	std::vector<std::string>	list() const;
 	void						to_string() const;
 };
 

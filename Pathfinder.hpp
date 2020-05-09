@@ -8,30 +8,72 @@
 #include "Inventory.hpp"
 #include "Cart.hpp"
 
-
-typedef std::pair<unsigned int, unsigned int> Coords;
 typedef	std::vector<Coords> Path;
 
 class Pathfinder
 {
 private:
 	/* data */
-	Path _path;
-	Map		*_map;
+	size_t		shortest_path = 100000000;
+	Path		_path;
+	Map			_map;
+	Cart		_cart;
+	Inventory	_inv;
+	Path		_items;
+	/*
+		Map	_map:
+			j	0	1	2	3	4
+		i	
+		0		1	1	1	1	1
+		1		1	0	0	0	1
+		2		1	0	1	0	1
+		3		1	0	0	0	1
+		4		1	1	1	1	1
+	 */
 	bool** _checked;
+	/*
+		bool**	_checked:
+		*	No node visited	*
+			j	0	1	2	3	4
+		i	
+		0		F	F	F	F	F
+		1		F	F	F	F	F
+		2		F	F	F	F	F
+		3		F	F	F	F	F
+		4		F	F	F	F	F
+		*	(1, 1) visited	*
+			j	0	1	2	3	4
+		i	
+		0		F	F	F	F	F
+		1		F	T	F	F	F
+		2		F	F	F	F	F
+		3		F	F	F	F	F
+		4		F	F	F	F	F
+		
+	 */
 	
 public:
-	Cart	cart()	const;
-	Map		map()	const;
-	Path	path()	const;
+	//	getters
+	Cart		cart()		const;
+	Map			map()		const;
+	Path		path()		const;
+	Inventory	inventory()	const;
+	Path		items()		const;
+	//	reading
 	void	readMap(std::string filename);
 	void	readInventory(std::string filename);
-	void	readList(std::string	filename);
-	Path	find_path(Coords pos, Coords end, bool **checked = nullptr/*, std::string dir=""*/);
+	void	readCart(std::string filename);
+	//	path finding
+	Path	find_path(Coords pos, Coords end, bool **checked = nullptr);//, size_t current_size = 1/*, std::string dir=""*/);
 	bool	out_of_bounds(Coords pos, bool**checked);
 	bool	**check(Coords pos, bool **checked);
+	//	utility
+	Path	generate();
+	Coords	get_coords(std::string item);
+	void	fill_items();
+	void	sort_items_by_distance();
 };
 
-std::string	coord_to_string(Coords coord);
 std::string	path_to_string(Path path);
+double		distance(Coords start, Coords end);
 #endif

@@ -51,5 +51,6 @@
 		"sstream": "cpp",
 		"string": "cpp",
 		"xtree": "cpp"
-	}
+	},
+	"C_Cpp.errorSquiggles": "Disabled"
 }

@@ -30,3 +30,25 @@ void			Cart::to_string() const
 	for(auto item : _list)
 		std::cout << item << std::endl;
 }
+
+
+void	Cart::add_to_cart(std::string item)
+{
+	_list.push_back(item);
+}
+void	Cart::remove_item(std::string item)
+{
+	for(size_t i = 0; i < _list.size(); i++)
+	{
+		if(_list[i] == item)
+		{
+			_list.erase(_list.begin()+i);
+			return;
+		}
+	}
+}
+
+std::vector<std::string>	Cart::list() const
+{
+	return _list;
+}

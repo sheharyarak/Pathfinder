@@ -1,13 +1,28 @@
-Inventory.o: Inventory.cpp Inventory.hpp \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iostream \
+Strings.o: Strings.cpp Strings.hpp \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\string \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++config.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\os_defines.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\cpu_defines.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ostream \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ios \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iosfwd \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stringfwd.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\memoryfwd.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\char_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_algobase.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\functexcept.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception_defines.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cpp_type_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\type_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\numeric_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_pair.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\move.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\concept_check.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\type_traits \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_types.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_funcs.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\assertions.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ptr_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\debug.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\predefined_ops.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\postypes.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cwchar \
  c:\mingw\include\wchar.h c:\mingw\include\_mingw.h \
@@ -22,52 +37,27 @@ Inventory.o: Inventory.cpp Inventory.hpp \
  c:\mingw\include\sys/stat.h c:\mingw\include\conio.h \
  c:\mingw\include\io.h c:\mingw\include\stdint.h c:\mingw\include\time.h \
  c:\mingw\include\locale.h c:\mingw\include\process.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\exception \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception_ptr.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception_defines.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cxxabi_init_exception.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\typeinfo \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\hash_bytes.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\new \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\nested_exception.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\move.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\concept_check.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\type_traits \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\char_traits.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_algobase.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\functexcept.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cpp_type_traits.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\type_traits.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\numeric_traits.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_pair.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_types.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_funcs.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\assertions.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ptr_traits.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\debug.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\predefined_ops.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cstdint \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\stdint.h \
  c:\mingw\include\stdint.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\allocator.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++allocator.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\new_allocator.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\new \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\exception \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception_ptr.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cxxabi_init_exception.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\typeinfo \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\hash_bytes.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\nested_exception.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\localefwd.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++locale.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\clocale \
  c:\mingw\include\locale.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iosfwd \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cctype \
  c:\mingw\include\ctype.h c:\mingw\include\wctype.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ios_base.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\atomicity.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr-default.h \
- c:\mingw\include\errno.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\atomic_word.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_classes.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\string \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\allocator.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++allocator.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\new_allocator.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ostream_insert.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cxxabi_forced.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_function.h \
@@ -75,6 +65,11 @@ Inventory.o: Inventory.cpp Inventory.hpp \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\range_access.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\initializer_list \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_string.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\atomicity.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr-default.h \
+ c:\mingw\include\errno.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\atomic_word.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\alloc_traits.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\alloc_traits.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\string_conversions.h \
@@ -87,6 +82,11 @@ Inventory.o: Inventory.cpp Inventory.hpp \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cerrno \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\functional_hash.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_string.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iostream \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ostream \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ios \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ios_base.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_classes.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_classes.tcc \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\system_error \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\error_constants.h \
@@ -104,47 +104,33 @@ Inventory.o: Inventory.cpp Inventory.hpp \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ostream.tcc \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\istream \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\istream.tcc \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\map \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_tree.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\aligned_buffer.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_map.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\tuple \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\algorithm \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\utility \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_relops.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\array \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\uses_allocator.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\invoke.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_multimap.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\erase_if.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\fstream \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\codecvt.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\basic_file.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++io.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\fstream.tcc \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iomanip \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\locale \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets_nonio.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ctime c:\mingw\include\time.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\time_members.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\messages_members.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets_nonio.tcc \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_conv.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\unique_ptr.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\quoted_string.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\sstream \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\sstream.tcc Strings.hpp \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\algorithm \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_algo.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\algorithmfwd.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_heap.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_tempbuf.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_construct.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\uniform_int_dist.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\limits
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\limits \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\locale \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets_nonio.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ctime c:\mingw\include\time.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\time_members.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\messages_members.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\codecvt.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets_nonio.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_conv.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\unique_ptr.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\tuple \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\array \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\uses_allocator.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\invoke.h
 
-Inventory.hpp:
+Strings.hpp:
 
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iostream:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\string:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++config.h:
 
@@ -152,15 +138,45 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\os_defines.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\cpu_defines.h:
 
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ostream:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ios:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iosfwd:
-
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stringfwd.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\memoryfwd.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\char_traits.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_algobase.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\functexcept.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception_defines.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cpp_type_traits.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\type_traits.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\numeric_traits.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_pair.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\move.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\concept_check.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\type_traits:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_types.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_funcs.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\assertions.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ptr_traits.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\debug.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\predefined_ops.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\postypes.h:
 
@@ -208,13 +224,25 @@ c:\mingw\include\locale.h:
 
 c:\mingw\include\process.h:
 
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cstdint:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\stdint.h:
+
+c:\mingw\include\stdint.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\allocator.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++allocator.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\new_allocator.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\new:
+
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\exception:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception_ptr.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception_defines.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cxxabi_init_exception.h:
 
@@ -222,49 +250,7 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\typeinfo:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\hash_bytes.h:
 
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\new:
-
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\nested_exception.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\move.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\concept_check.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\type_traits:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\char_traits.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_algobase.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\functexcept.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cpp_type_traits.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\type_traits.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\numeric_traits.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_pair.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_types.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_funcs.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\assertions.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ptr_traits.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\debug.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\predefined_ops.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cstdint:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\stdint.h:
-
-c:\mingw\include\stdint.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\localefwd.h:
 
@@ -274,33 +260,13 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\clocale:
 
 c:\mingw\include\locale.h:
 
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iosfwd:
+
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cctype:
 
 c:\mingw\include\ctype.h:
 
 c:\mingw\include\wctype.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ios_base.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\atomicity.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr-default.h:
-
-c:\mingw\include\errno.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\atomic_word.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_classes.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\string:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\allocator.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++allocator.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\new_allocator.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ostream_insert.h:
 
@@ -315,6 +281,16 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\range_access.h:
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\initializer_list:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_string.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\atomicity.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr-default.h:
+
+c:\mingw\include\errno.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\atomic_word.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\alloc_traits.h:
 
@@ -341,6 +317,16 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cerrno:
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\functional_hash.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_string.tcc:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iostream:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ostream:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ios:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ios_base.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_classes.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_classes.tcc:
 
@@ -376,69 +362,11 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\istream:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\istream.tcc:
 
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\map:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_tree.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\aligned_buffer.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_map.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\tuple:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\algorithm:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\utility:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_relops.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\array:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\uses_allocator.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\invoke.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_multimap.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\erase_if.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\fstream:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\codecvt.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\basic_file.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++io.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\fstream.tcc:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iomanip:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\locale:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets_nonio.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ctime:
-
-c:\mingw\include\time.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\time_members.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\messages_members.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets_nonio.tcc:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_conv.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\unique_ptr.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\quoted_string.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\sstream:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\sstream.tcc:
-
-Strings.hpp:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\algorithm:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_algo.h:
 
@@ -453,3 +381,31 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_construct.h:
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\uniform_int_dist.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\limits:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\locale:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets_nonio.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ctime:
+
+c:\mingw\include\time.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\time_members.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\messages_members.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\codecvt.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets_nonio.tcc:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_conv.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\unique_ptr.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\tuple:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\array:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\uses_allocator.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\invoke.h:

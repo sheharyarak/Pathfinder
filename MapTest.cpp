@@ -14,5 +14,4 @@ int		main(int argc, char	*argv[])
 	Map	map;
 	map.readMap(path);
 	map.printMap();
-	
 }

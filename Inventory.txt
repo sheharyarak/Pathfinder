@@ -1,8 +1,8 @@
-0	P	#Path must always be 0
-1	X	# Wall or not a Path
-2	I	# Entrance or in route
-3	O	#Exit or out route
-4	B	# bathroom
+0	Path		#	Path must always be 0
+1	Wall		# 	Wall or not a Path
+2	Entrance	# 	Entrance or in route
+3	Exit		#	Exit or out route
+4	Bathroom	# 	bathroom
 10	bookmark									
 11	charger									
 12	spring									

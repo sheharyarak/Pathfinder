@@ -7,10 +7,11 @@
 class Inventory
 {
 private:
-	std::map<std::string, unsigned int> inventory;
+	size_t	max_item_length = 0;
+	std::map<std::string, size_t> inventory;
 public:
 	Inventory(){}
-	unsigned int&	operator[](const std::string key);
+	size_t&	operator[](const std::string key);
 	void			readInventory(std::string filename);
 	void			to_string();
 };
