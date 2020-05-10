@@ -46,11 +46,21 @@ void			Inventory::readInventory(std::string filename)
 	}
 	in.close();
 }
-void			Inventory::to_string()
+void	Inventory::to_string()
 {
 	for(auto iter = inventory.begin(); iter != inventory.end(); iter++)
 	{
 		std::cout << std::setw(max_item_length+3) << iter->first << "\t";
 		std::cout << iter->second << std::endl;
 	}
+}
+
+void	Inventory::print_html_list()
+{
+	for(auto iter = inventory.begin(); iter != inventory.end(); iter++)
+	{
+		std::cout << "<input type=\"checkbox\" id=\"" << iter->second << "\" name=\"" << iter->second << "\" value=\"" << iter->first << "\">" << std::endl
+  		<< "<label for=\"" << iter->second << "\"> I have a bike</label><br>" << std::endl;
+	}
+
 }

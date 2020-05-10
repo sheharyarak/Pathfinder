@@ -12,6 +12,21 @@ void	Map::generateArray()
 	}
 }
 
+void	Map::generateColorMap()
+{
+	colors[0] = "#FFFBD7";
+	colors[1] = "#808080";
+	colors[2] = "#58F658";
+	colors[3] = "#FF0000";
+	colors[4] = "#12B1FF";
+	colors[5] = "#000000";
+}
+
+std::string	Map::color(size_t c)
+{
+	c = c > 4 ? 5 : c;
+	return colors[c];
+}
 // Map::~Map()
 // {
 // 	for(size_t i = 0; i < _height; i++)
@@ -108,4 +123,27 @@ std::string		coord_to_string(Coords coord)
 		str += ")";
 	}
 	return str;
+}
+
+size_t	Map::scale()	const
+{
+	return _scale;
+}
+void	Map::scale(size_t sc)
+{
+	_scale = sc;
+}
+
+void	Map::draw_map()
+{
+	for(size_t i = 0; i < _height; i++)
+	{
+		for(size_t j = 0; j < _width; j++)
+		{
+			std::cout << "ctx.fillStyle = \"" << colors[_map[i][j]] << "\";" << std::endl
+			<<	"ctx.fillRect(" 
+			<< j * _scale << ", " << i * _scale << ", " << _scale << ", " << _scale << ");"
+			<< std::endl;
+		}
+	}
 }

@@ -290,3 +290,26 @@ Path	Pathfinder::generate()
 	_path = path;
 	return path;
 }
+
+void	Pathfinder::mark_items()
+{
+	for(Coords item: _items)
+		std::cout << "ctx.fillStyle = \"" << "#00FF04" << "\";" << std::endl
+			<<	"ctx.fillRect(" 
+			<< item.first * map().scale() << ", " << item.second * map().scale() 
+			<< ", " << map().scale() << ", " << map().scale() << ");"
+			<< std::endl;
+}
+
+void	Pathfinder::draw_path()
+{
+	std::cout << "ctx.beginPath();" << std::endl
+	<<	"ctx.moveTo(" << _path[0].first << ", " << _path[0].second <<");" << std::endl;
+	for (size_t i = 1; i < _path.size(); i++)
+	{
+		/* code */
+		std::cout << "ctx.lineTo(" << _path[i].first << ", " << _path[i].second << ");"
+		<<	"ctx.strokeStyle = #FF63FF" << std::endl
+		<<	"ctx.stroke();" << std::endl;
+	}
+}

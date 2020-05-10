@@ -72,6 +72,8 @@ public:
 	Coords	get_coords(std::string item);
 	void	fill_items();
 	void	sort_items_by_distance();
+	void	mark_items();
+	void	draw_path();
 };
 
 std::string	path_to_string(Path path);
