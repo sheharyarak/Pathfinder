@@ -1,0 +1,68 @@
+10	11									
+1	2	3	1	1	1	1	1	1	4	1
+1	0	0	0	0	0	0	0	0	0	1
+1	0	10	0	16	0	22	0	28	0	1
+1	0	11	0	17	0	23	0	29	0	1
+1	0	12	0	18	0	24	0	30	0	1
+1	0	13	0	19	0	25	0	31	0	1
+1	0	14	0	20	0	26	0	32	0	1
+1	0	15	0	21	0	27	0	33	0	1
+1	0	0	0	0	0	0	0	0	0	1
+1	1	1	1	1	1	1	1	1	1	1
+										
+0	P	#Path
+1	X	# Wall or not a Path
+2	I	# Entrance or in route
+3	O	#Exit or out route
+4	B	# bathroom
+10	bookmark									
+11	charger									
+12	spring									
+13	conditioner									
+14	towel									
+15	face wash									
+16	sailboat									
+17	tree									
+18	sand paper									
+19	clock									
+20	buckel									
+21	washing machine									
+22	drill press									
+23	white out									
+24	paint brush									
+25	key chain									
+26	blanket									
+27	leg warmers									
+28	sharpie									
+29	shoes									
+30	boom box									
+31	rubber duck									
+32	soy sauce packet									
+33	checkbook										
+					
+										
+bookmark										
+charger										
+spring										
+conditioner										
+towel										
+face wash										
+sailboat										
+tree										
+sand paper										
+clock										
+buckel										
+washing machine										
+drill press										
+white out										
+paint brush										
+key chain										
+blanket										
+leg warmers										
+sharpie										
+shoes										
+boom box										
+rubber duck										
+soy sauce packet										
+checkbook										
+lamp										
