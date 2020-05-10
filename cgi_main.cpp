@@ -30,6 +30,5 @@ int		main()
 	std::cout	<<	"<body>" << std::endl;
 	std::cout	<<	"<canvas id=\"canvas1\" width=\"" << p.map().width() * p.map().scale() 
 	<< "\" heigth=\"" << p.map().height() * p.map().scale() <<"\"></canvas>" << std::endl;
-	std::cout 	<<	"</body>" << std::endl
-				<<	"</html>" << std::endl;
+	std::cout 	<<	"</body>" << std::endl;
 }

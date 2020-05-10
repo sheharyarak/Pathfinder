@@ -1,5 +1,10 @@
 #include "UI.hpp"
 
+UI::~UI()
+{
+	std::cout << "</html>" << std::endl;
+}
+
 UI::UI(std::string title)
 {
 	_title = title;

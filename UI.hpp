@@ -16,6 +16,7 @@ private:
 	std::map<std::string, std::string>	_queries;
 public:
 	UI(std::string title);
+	~UI();
 	void		set_query_string(std::string qs);
 	std::string	get_query_string()	const;
 	void		set_argc(size_t	ac);
@@ -27,12 +28,9 @@ public:
 	std::string	param(std::string query);
 	std::map<std::string, std::string>	queries() const; 
 
-	// ~UI();
 };
 
-// UI::~UI()
-// {
-// }
+
 
 
 #endif
