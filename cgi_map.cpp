@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include "UI.hpp"
-#include "Inventory.hpp"
 
 int		main()
 {
@@ -16,7 +15,7 @@ int		main()
 	std::string inv = ui.param("inventory");
 	
 	std::cout	<<	"<body>" << std::endl
-				<<	"	<form action=\"/map.cgi\">" << std::endl
+				<<	"	<form action=\"/Pathfinder.cgi\">" << std::endl
 				<<	"		<input type=\"hidden\" name=\"Inv\" value=\"" << ui.param("inventory") << "\">" << std::endl
 				<<	"		<input type=\"hidden\" name=\"Cart\" value=\"" << ui.param("cart") << "\">"  << std::endl
 				<<	"		<input type=\"radio\" name=\"Map\" value=\"" << "Map.tsv" << "\" id=\"" << "Map.tsv" << "\"" << ">" << std::endl;

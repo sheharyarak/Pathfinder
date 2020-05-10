@@ -9,7 +9,7 @@ int		main()
 	Inventory	inv;
 	inv.readInventory(ui.param("inventory"));
 	std::cout	<<	"<body>" << std::endl
-				<<	"	<form action=\"/map.cgi\">" << std::endl
+				<<	"	<form action=\"/Map.cgi\">" << std::endl
 				<<	"		<input type=\"hidden\" name=\"InvFile\" value=\"" << ui.param("inventory") << "\"" << std::endl;
 	inv.print_html_list();
 	std::cout	<<	"		<button type=\"submit\">add to cart</submit>" << std::endl
