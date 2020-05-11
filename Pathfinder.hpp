@@ -73,7 +73,7 @@ public:
 	Path	generate();
 	Coords	get_coords(std::string item);
 	void	fill_items();
-	void	sort_items_by_distance();
+	void	sort_items_by_distance(Coords pos);
 	void	mark_items();
 	void	draw_path();
 	size_t	width()	const;
