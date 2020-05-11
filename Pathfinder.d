@@ -123,9 +123,9 @@ Pathfinder.o: Pathfinder.cpp /usr/include/stdc-predef.h Pathfinder.hpp \
  /usr/include/x86_64-linux-gnu/bits/inf.h \
  /usr/include/x86_64-linux-gnu/bits/nan.h \
  /usr/include/x86_64-linux-gnu/bits/mathdef.h \
- /usr/include/x86_64-linux-gnu/bits/mathcalls.h Strings.hpp \
- /usr/include/c++/6/locale /usr/include/c++/6/bits/locale_facets_nonio.h \
- /usr/include/c++/6/ctime \
+ /usr/include/x86_64-linux-gnu/bits/mathcalls.h /usr/include/c++/6/ctime \
+ Strings.hpp /usr/include/c++/6/locale \
+ /usr/include/c++/6/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/6/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/6/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/6/bits/codecvt.h \
@@ -478,13 +478,13 @@ Cart.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls.h:
 
+/usr/include/c++/6/ctime:
+
 Strings.hpp:
 
 /usr/include/c++/6/locale:
 
 /usr/include/c++/6/bits/locale_facets_nonio.h:
-
-/usr/include/c++/6/ctime:
 
 /usr/include/x86_64-linux-gnu/c++/6/bits/time_members.h:
 

@@ -149,9 +149,9 @@ size_t	Map::scale() const
 }
 void	Map::scale(size_t sc)
 {
-	std::cout <<  "setting _scale: " << _scale << std::endl;
+	//~ std::cout <<  "setting _scale: " << _scale << std::endl;
 	_scale = sc;
-	std::cout <<  "setting _scale: " << _scale << std::endl;
+	//~ std::cout <<  "setting _scale: " << _scale << std::endl;
 }
 
 void	Map::draw_map()

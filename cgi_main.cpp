@@ -22,9 +22,9 @@ int		main()
 		}		
 		//~ std::cout << ui.queries().at(i) << " --> " << ui.params().at(i) << "<br>" <<std::endl;
 	}
-	p.map().printMapHTML();
-	p.inventory().to_stringHTML();
-	p.cart().to_stringHTML();
+	//~ p.map().printMapHTML();
+	//~ p.inventory().to_stringHTML();
+	//~ p.cart().to_stringHTML();
 
 	p.generate();
 	p.map().scale(100);
@@ -33,14 +33,17 @@ int		main()
 	<<	"window.onload = draw;" << std::endl
 	<<	"function draw(){" << std::endl
 	<<	"var canvas = document.getElementById(\"canvas1\");" << std::endl
+	<<	"console.log(canvas.width); console.log(canvas.height);" << std::endl 
 	<<	"var ctx = canvas.getContext(\"2d\");" << std::endl;
 	p.map().draw_map();
 	p.mark_items();
 	p.draw_path();
+	p.map().scale(50);
+	p.width(p.map().scale()/10);
 	std::cout << "}" << std::endl
 	<<	"</script>" << std::endl;
 	std::cout	<<	"<body>" << std::endl;
-	std::cout	<<	"<p>Scale: " << p.map().scale() << " Path: " << path_to_string(p.path()) << "</p><br><br>" << std::endl;
+	//~ std::cout	<<	"<p>Scale: " << p.map().scale() << " Path: " << path_to_string(p.path()) << "</p><br><br>" << std::endl;
 	std::cout	<<	"<canvas id=\"canvas1\" width=\"" << p.map().width() * p.map().scale() 
 	<< "\" height=\"" << p.map().height() * p.map().scale() <<"\"></canvas>" << std::endl;
 	std::cout 	<<	"</body>" << std::endl;

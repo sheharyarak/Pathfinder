@@ -21,7 +21,7 @@ private:
 	Cart		_cart;
 	Inventory	_inv;
 	Path		_items;
-	size_t		_width = 24;
+	size_t		_width = 10;
 	/*
 		Map	_map:
 			j	0	1	2	3	4

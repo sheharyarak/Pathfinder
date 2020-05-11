@@ -2,6 +2,8 @@
 #include <algorithm>
 #include <cmath>
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include <string>
 #include "Strings.hpp"
 
@@ -242,7 +244,7 @@ void	Pathfinder::fill_items()
 	{
 		coord = get_coords(item);
 		items.push_back(coord);
-		std::cout << item << " is at " << coord_to_string(coord) << "<br>" <<std::endl;
+		//~ std::cout << item << " is at " << coord_to_string(coord) << "<br>" <<std::endl;
 	}
 	_items = items;
 }
@@ -287,6 +289,9 @@ Path	Pathfinder::generate()
 			path.push_back(coord);
 		start = path[path.size()-1];
 	}
+	tmp = find_path(start, get_coords("Exit"));
+	for(Coords coord: tmp)
+			path.push_back(coord);
 	_path = path;
 	return path;
 }
@@ -303,17 +308,33 @@ void	Pathfinder::mark_items()
 
 void	Pathfinder::draw_path()
 {
-	std::cout << "ctx.beginPath();" << std::endl;
+	std::srand(std::time(nullptr));
+	std::cout << std::endl
+	<<"var R = 0; var G = 0; var B = 0; var color = \'rgba(0,0,0,1)\';" << std::endl
+	<< "ctx.beginPath();" << std::endl;
 	std::cout << "ctx.lineWidth = " << _width << ";" << std::endl
 	<<	"ctx.moveTo(" << _path[0].first*map().scale() << ", " << _path[0].second*map().scale() <<");" << std::endl;
 	std::string color = "#FF63FF";
 	for (size_t i = 1; i < _path.size(); i++)
 	{
 		/* code */
-		std::cout << "ctx.lineTo(" << _path[i].first*map().scale() << ", " << _path[i].second*map().scale() << ");"
-		<<	"ctx.strokeStyle = \"" << color << "\";" << std::endl
-		<<	"ctx.stroke();" << std::endl;
-		color = i % 2 ? "#FF63FF" : "339966";
+		std::cout << "ctx.lineTo(" << _path[i].first*map().scale() + map().scale()/2.0 << ", " << _path[i].second*map().scale() + map().scale()/2.0 << ");" << std::endl
+		//~ <<	"ctx.strokeStyle = \"" << color << "\";" << std::endl
+		//~ <<	"R = Math.floor(Math.random()*256);" <<std::endl
+		//~ <<	"G = Math.floor(Math.random()*256);" <<std::endl
+		//~ <<	"B = Math.floor(Math.random()*256);" <<std::endl
+		<< "R = " << (255 - i*map().scale()) % 256 <<";" << std::endl
+		<< "G = " << 0<<";" << std::endl
+		<< "B = " << 255<<";" << std::endl
+		
+		<<	"color = \'rgba(\' + R + \', \' + G + \', \' + B + \', 1)\';" << std::endl
+		//~ <<	"console.log(color);" <<std::endl
+		<<	"ctx.strokeStyle = " << "color" << ";" << std::endl
+		<<	"ctx.stroke(); ctx.closePath(); " << std::endl;
+		std::cout <<	"ctx.beginPath(); ctx.moveTo(" << _path[i].first*map().scale() + map().scale()/2.0 << ", " << _path[i].second*map().scale() + map().scale()/2.0 <<");" << std::endl;
+		
+		
+		//~ color = i % 2 ? "#FF63FF" : "339966";
 	}
 }
 
