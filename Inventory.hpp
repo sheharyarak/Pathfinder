@@ -15,6 +15,7 @@ public:
 	void			print_html_list();
 	void			readInventory(std::string filename);
 	void			to_string();
+	void			to_stringHTML();
 };
 
 #endif

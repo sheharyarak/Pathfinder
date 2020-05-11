@@ -99,6 +99,23 @@ void	Map::printMap()
 		}
 	}
 }
+void	Map::printMapHTML()
+{
+	std::cout << "----------------start Map.to_stringHTML-----------------<br>" << std::endl;
+	std::cout << _width << "\t" << _height << "<br>" << std::endl;
+	for(size_t i = 0; i < _height; i++)
+	{
+		for(size_t j = 0; j < _width; j++)
+		{
+			std::cout << _map[i][j];
+			if(j == _width - 1)
+				std::cout << "<br>" << std::endl;
+			else
+				std::cout << "\t";
+		}
+	}
+	std::cout << "----------------end Map.to_stringHTML-----------------<br>" << std::endl;
+}
 size_t	Map::at_coord(size_t x, size_t y) const
 {
 

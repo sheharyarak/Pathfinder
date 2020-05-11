@@ -13,14 +13,21 @@ int		main()
 	Pathfinder p;
 	p.readMap(map);
 	p.readInventory(inv);
-	p.readCart(cart);
-	
-	// p.map().printMap();
-	// p.inventory().to_string();
-	// p.cart().to_string();
+	for(size_t i = 0; i < ui.queries().size(); i++)
+	{
+		//~ std::cerr << "here" << std::endl;
+		if(ui.queries().at(i) == "item")
+		{
+			p.add_to_cart(ui.params().at(i));
+		}		
+		//~ std::cout << ui.queries().at(i) << " --> " << ui.params().at(i) << "<br>" <<std::endl;
+	}
+	p.map().printMapHTML();
+	p.inventory().to_stringHTML();
+	p.cart().to_stringHTML();
 
 	p.generate();
-	p.map().scale(25);
+	p.map().scale(100);
 
 	std::cout	<<	"<script>" << std::endl
 	<<	"window.onload = draw;" << std::endl
@@ -35,6 +42,6 @@ int		main()
 	std::cout	<<	"<body>" << std::endl;
 	std::cout	<<	"<p>Scale: " << p.map().scale() << " Path: " << path_to_string(p.path()) << "</p><br><br>" << std::endl;
 	std::cout	<<	"<canvas id=\"canvas1\" width=\"" << p.map().width() * p.map().scale() 
-	<< "\" heigth=\"" << p.map().height() * p.map().scale() <<"\"></canvas>" << std::endl;
+	<< "\" height=\"" << p.map().height() * p.map().scale() <<"\"></canvas>" << std::endl;
 	std::cout 	<<	"</body>" << std::endl;
 }

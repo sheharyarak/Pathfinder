@@ -5,7 +5,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <utility>
-#include <map>
+#include <vector>
 
 class UI
 {
@@ -13,7 +13,9 @@ private:
 	/* data */
 	size_t			_argc = 0;
 	std::string		_query_string, _title;
-	std::map<std::string, std::string>	_queries;
+	std::vector<std::string>	_queries;
+	std::vector<std::string>	_params;
+	
 public:
 	UI(std::string title);
 	~UI();
@@ -26,7 +28,8 @@ public:
 	void		print_html_header();
 	void		parse();
 	std::string	param(std::string query);
-	std::map<std::string, std::string>	queries() const; 
+	std::vector<std::string>	queries() const; 
+	std::vector<std::string>	params() const; 
 
 };
 

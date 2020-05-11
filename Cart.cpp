@@ -27,10 +27,17 @@ std::string&	Cart::operator[](int i)
 
 void			Cart::to_string() const
 {
+	std::cout << "printing cart:" << std::endl;
 	for(auto item : _list)
 		std::cout << item << std::endl;
 }
-
+void			Cart::to_stringHTML() const
+{
+	std::cout << "----------------start cart.to_stringHTML-----------------<br>" << std::endl;
+	for(auto item : _list)
+		std::cout << item << "<br>" << std::endl;
+	std::cout << "---------------- end cart.to_stringHTML-----------------<br>" << std::endl;
+}
 
 void	Cart::add_to_cart(std::string item)
 {

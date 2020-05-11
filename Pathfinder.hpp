@@ -21,7 +21,7 @@ private:
 	Cart		_cart;
 	Inventory	_inv;
 	Path		_items;
-	size_t		_width = 5;
+	size_t		_width = 24;
 	/*
 		Map	_map:
 			j	0	1	2	3	4
@@ -78,6 +78,7 @@ public:
 	void	draw_path();
 	size_t	width()	const;
 	void	width(size_t width);
+	void	add_to_cart(std::string item);
 };
 
 std::string	path_to_string(Path path);

@@ -14,7 +14,7 @@ private:
 		std::map<size_t, std::string> colors;
 		size_t		_width = 0;
 		size_t		_height = 0;
-		size_t		_scale = 25;
+		size_t		_scale = 100;
 std::map<size_t, Coords>	_also_a_map_lol;
 size_t	**_map = nullptr;
 void	generateArray();
@@ -23,6 +23,7 @@ public:
 	Map(){	generateColorMap();	}
 	void	readMap(std::string filename);
 	void	printMap();
+	void	printMapHTML();
 	void	draw_map();
 	size_t	height()	const;
 	size_t	width()		const;

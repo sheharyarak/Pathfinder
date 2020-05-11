@@ -54,14 +54,24 @@ void	Inventory::to_string()
 		std::cout << iter->second << std::endl;
 	}
 }
+void	Inventory::to_stringHTML()
+{
+	std::cout << "----------------start Inventory.to_stringHTML-----------------<br>" << std::endl;
+	for(auto iter = inventory.begin(); iter != inventory.end(); iter++)
+	{
+		std::cout << std::setw(max_item_length+3) << iter->first << "\t";
+		std::cout << iter->second << "<br>" << std::endl;
+	}
+	std::cout << "----------------end Inventory.to_stringHTML-----------------<br>" << std::endl;
+}
 
 void	Inventory::print_html_list()
 {
 	for(auto iter = inventory.begin(); iter != inventory.end(); iter++)
 	{
 		if(iter->second > 4)
-		std::cout << "<input type=\"checkbox\" id=\"" << iter->second << "\" name=\"" << iter->second << "\" value=\"" << iter->first << "\">" << std::endl
-  		<< "<label for=\"" << iter->second << "\">"<< iter->first <<"</label><br>" << std::endl;
+		std::cout << "<input type=\"checkbox\" id=\"" << iter->second << "\" name=\"" << "item" << "\" value=\"" << iter->first << "\">" << std::endl
+  		<< "<label for=\"" << "item" << "\">"<< iter->first <<"</label><br>" << std::endl;
 		//   std::cout<<"<input type=\"checkbox\"><p>item</p><br>"<<std::endl;
 	}
 

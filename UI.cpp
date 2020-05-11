@@ -27,8 +27,8 @@ void		UI::print_html_header()
 	<< "<head>" << std::endl
 	<< "<title>" << _title << "</title>" << std::endl
 	<< "</head>" << std::endl;
-	// _query_string = getenv("QUERY_STRING");
-	_query_string = "Inventory=Inventory.txt&Cart=cart.txt&Map=Map.tsv";
+	_query_string = getenv("QUERY_STRING");
+	//~ _query_string = "Inventory=Inventory.txt&Cart=cart.txt&Map=Map.tsv";
 	for(size_t i = 0; i < _query_string.length(); i++)
 		if(_query_string[i]=='+')
 			_query_string[i] = ' ';
@@ -69,18 +69,30 @@ void		UI::parse()
 		curr = _query_string.find("&", start);
 		param = _query_string.substr(start, curr-start);
 		// std::cout << "param: " << param << std::endl;
-		_queries.emplace(query, param);
+		_queries.push_back(query);
+		_params.push_back(param);
 		start = curr + 1;
 	}
-	// for(auto iter = _queries.begin(); iter != _queries.end(); iter++)
-	// 	std::cout << iter->first << " --> " << iter->second << std::endl;
+	//~ for(size_t i = 0; i < _queries.size(); i++)
+		//~ std::cout << _queries[i] << " --> " << _params[i] << std::endl;
 }
 std::string	UI::param(std::string query)
 {
-	return _queries[query];
+	size_t i = 0;
+	while( i < _queries.size())
+	{
+		if(_queries[i] == query) break;
+		i++;
+	}
+	return _params[i];
 }
 
-std::map<std::string, std::string>	UI::queries() const
+std::vector<std::string>	UI::queries() const
 {
 	return _queries;
+}
+
+std::vector<std::string>	UI::params() const
+{
+	return _params;
 }

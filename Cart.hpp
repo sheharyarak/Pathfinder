@@ -15,6 +15,7 @@ public:
 	std::string&				operator[](int i);
 	std::vector<std::string>	list() const;
 	void						to_string() const;
+	void						to_stringHTML() const;
 };
 
 #endif

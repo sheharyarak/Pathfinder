@@ -242,7 +242,7 @@ void	Pathfinder::fill_items()
 	{
 		coord = get_coords(item);
 		items.push_back(coord);
-		// std::cout << item << " is at " << coord_to_string(coord) << std::endl;
+		std::cout << item << " is at " << coord_to_string(coord) << "<br>" <<std::endl;
 	}
 	_items = items;
 }
@@ -305,13 +305,15 @@ void	Pathfinder::draw_path()
 {
 	std::cout << "ctx.beginPath();" << std::endl;
 	std::cout << "ctx.lineWidth = " << _width << ";" << std::endl
-	<<	"ctx.moveTo(" << _path[0].first << ", " << _path[0].second <<");" << std::endl;
+	<<	"ctx.moveTo(" << _path[0].first*map().scale() << ", " << _path[0].second*map().scale() <<");" << std::endl;
+	std::string color = "#FF63FF";
 	for (size_t i = 1; i < _path.size(); i++)
 	{
 		/* code */
-		std::cout << "ctx.lineTo(" << _path[i].first << ", " << _path[i].second << ");"
-		<<	"ctx.strokeStyle = \"#FF63FF\";" << std::endl
+		std::cout << "ctx.lineTo(" << _path[i].first*map().scale() << ", " << _path[i].second*map().scale() << ");"
+		<<	"ctx.strokeStyle = \"" << color << "\";" << std::endl
 		<<	"ctx.stroke();" << std::endl;
+		color = i % 2 ? "#FF63FF" : "339966";
 	}
 }
 
@@ -322,4 +324,8 @@ size_t	Pathfinder::width()	const
 void	Pathfinder::width(size_t width)
 {
 	_width = width;
+}
+void	Pathfinder::add_to_cart(std::string item)
+{
+	_cart.add_to_cart(item);
 }

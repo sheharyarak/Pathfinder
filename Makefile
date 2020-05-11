@@ -43,11 +43,21 @@ $(MGI): $(MGIOBJS)
 $(IGI): $(IGIOBJS)
 	$(CC) $^ -o $@
 
-WebApp:
+WebAppWin:
+	make Pathfinder.exe
 	make Pathfinder.cgi
 	make Map.cgi
 	make Inventory.cgi
 	mv Pathfinder.cgi Map.cgi Inventory.cgi C:\xampp\cgi-bin\Pathfinder
+
+WebAppLin:
+	make Pathfinder.exe
+	make Pathfinder.cgi
+	make Map.cgi
+	make Inventory.cgi
+	mv Pathfinder.cgi Map.cgi Inventory.cgi /usr/lib/cgi-bin/Pathfinder
+
+
 clean:
 	rm -f $(OBJS) $(EXE)
 
