@@ -14,7 +14,7 @@ int		main()
 		// std::cerr << "here" << std::endl;
 		if(iter->first != "Inventory")
 			cart << iter->second << std::endl;
-		std::cout << iter->first << " --> " << iter->second << std::endl;
+		// std::cout << iter->first << " --> " << iter->second << std::endl;
 	}
 	// std::string inv = ui.param("Inventory");
 	std::cout << "here" << std::endl;
