@@ -125,13 +125,16 @@ std::string		coord_to_string(Coords coord)
 	return str;
 }
 
-size_t	Map::scale()	const
+size_t	Map::scale() const
 {
+	// std::cout <<  "returning _scale: " << _scale << std::endl;
 	return _scale;
 }
 void	Map::scale(size_t sc)
 {
+	std::cout <<  "setting _scale: " << _scale << std::endl;
 	_scale = sc;
+	std::cout <<  "setting _scale: " << _scale << std::endl;
 }
 
 void	Map::draw_map()
@@ -140,7 +143,7 @@ void	Map::draw_map()
 	{
 		for(size_t j = 0; j < _width; j++)
 		{
-			std::cout << "ctx.fillStyle = \"" << colors[_map[i][j]] << "\";" << std::endl
+			std::cout << "ctx.fillStyle = \"" << color(_map[i][j]) << "\";" << std::endl
 			<<	"ctx.fillRect(" 
 			<< j * _scale << ", " << i * _scale << ", " << _scale << ", " << _scale << ");"
 			<< std::endl;

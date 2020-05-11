@@ -277,7 +277,7 @@ Path	Pathfinder::generate()
 	fill_items();
 	// std::cout << "items list: " << path_to_string(_items) << std::endl;
 	sort_items_by_distance();
-	// std::cout << "items list: " << path_to_string(_items) << std::endl;
+	// std::cout << "sorted items list: " << path_to_string(_items) << std::endl;
 	for(Coords item : _items)
 	{
 		// std::cout << "Finding path from " << coord_to_string(start) << " to " << coord_to_string(item) << std::endl;
@@ -303,13 +303,23 @@ void	Pathfinder::mark_items()
 
 void	Pathfinder::draw_path()
 {
-	std::cout << "ctx.beginPath();" << std::endl
+	std::cout << "ctx.beginPath();" << std::endl;
+	std::cout << "ctx.lineWidth = " << _width << ";" << std::endl
 	<<	"ctx.moveTo(" << _path[0].first << ", " << _path[0].second <<");" << std::endl;
 	for (size_t i = 1; i < _path.size(); i++)
 	{
 		/* code */
 		std::cout << "ctx.lineTo(" << _path[i].first << ", " << _path[i].second << ");"
-		<<	"ctx.strokeStyle = #FF63FF" << std::endl
+		<<	"ctx.strokeStyle = \"#FF63FF\";" << std::endl
 		<<	"ctx.stroke();" << std::endl;
 	}
+}
+
+size_t	Pathfinder::width()	const
+{
+	return _width;
+}
+void	Pathfinder::width(size_t width)
+{
+	_width = width;
 }

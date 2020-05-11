@@ -28,7 +28,7 @@ void		UI::print_html_header()
 	<< "<title>" << _title << "</title>" << std::endl
 	<< "</head>" << std::endl;
 	// _query_string = getenv("QUERY_STRING");
-	_query_string = "Inventory=Inventory.txt&26=blanket&22=drill+press&28=sharpie";
+	_query_string = "Inventory=Inventory.txt&Cart=cart.txt&Map=Map.tsv";
 	for(size_t i = 0; i < _query_string.length(); i++)
 		if(_query_string[i]=='+')
 			_query_string[i] = ' ';

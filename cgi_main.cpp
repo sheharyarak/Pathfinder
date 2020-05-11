@@ -10,12 +10,17 @@ int		main()
 	std::string inv = ui.param("Inventory");
 	std::string cart = ui.param("Cart");
 	std::string map = ui.param("Map");
-
 	Pathfinder p;
 	p.readMap(map);
 	p.readInventory(inv);
 	p.readCart(cart);
+	
+	// p.map().printMap();
+	// p.inventory().to_string();
+	// p.cart().to_string();
+
 	p.generate();
+	p.map().scale(25);
 
 	std::cout	<<	"<script>" << std::endl
 	<<	"window.onload = draw;" << std::endl
@@ -28,6 +33,7 @@ int		main()
 	std::cout << "}" << std::endl
 	<<	"</script>" << std::endl;
 	std::cout	<<	"<body>" << std::endl;
+	std::cout	<<	"<p>Scale: " << p.map().scale() << " Path: " << path_to_string(p.path()) << "</p><br><br>" << std::endl;
 	std::cout	<<	"<canvas id=\"canvas1\" width=\"" << p.map().width() * p.map().scale() 
 	<< "\" heigth=\"" << p.map().height() * p.map().scale() <<"\"></canvas>" << std::endl;
 	std::cout 	<<	"</body>" << std::endl;

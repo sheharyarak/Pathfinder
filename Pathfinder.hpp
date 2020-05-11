@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <utility>
+
 #include "Map.hpp"
 #include "Inventory.hpp"
 #include "Cart.hpp"
@@ -20,6 +21,7 @@ private:
 	Cart		_cart;
 	Inventory	_inv;
 	Path		_items;
+	size_t		_width = 5;
 	/*
 		Map	_map:
 			j	0	1	2	3	4
@@ -74,6 +76,8 @@ public:
 	void	sort_items_by_distance();
 	void	mark_items();
 	void	draw_path();
+	size_t	width()	const;
+	void	width(size_t width);
 };
 
 std::string	path_to_string(Path path);
