@@ -276,7 +276,8 @@ Path	Pathfinder::generate()
 	Path path, tmp;
 	Coords	start = get_coords("Entrance");
 	fill_items();
-	// std::cout << "items list: " << path_to_string(_items) << std::endl;
+	Path	items = _items;
+	std::cout << "items list: " << path_to_string(items) << "<br>" << std::endl;
 	// std::cout << "sorted items list: " << path_to_string(_items) << std::endl;
 	while(_items.size() > 0)
 	{
@@ -286,13 +287,14 @@ Path	Pathfinder::generate()
 		// std::cout << "tmp = " << path_to_string(tmp) << std::endl;
 		for(Coords coord: tmp)
 			path.push_back(coord);
-		start = path[path.size()-1];
+		start = path[path.size()-2];
 		_items.erase(_items.begin());
 	}
 	tmp = find_path(start, get_coords("Exit"));
 	for(Coords coord: tmp)
 			path.push_back(coord);
 	_path = path;
+	_items = items;
 	return path;
 }
 
