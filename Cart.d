@@ -1,402 +1,373 @@
-Cart.o: Cart.cpp /usr/include/stdc-predef.h Cart.hpp \
- /usr/include/c++/6/iostream \
- /usr/include/x86_64-linux-gnu/c++/6/bits/c++config.h \
- /usr/include/x86_64-linux-gnu/c++/6/bits/os_defines.h \
- /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
- /usr/include/x86_64-linux-gnu/bits/wordsize.h \
- /usr/include/x86_64-linux-gnu/gnu/stubs.h \
- /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
- /usr/include/x86_64-linux-gnu/c++/6/bits/cpu_defines.h \
- /usr/include/c++/6/ostream /usr/include/c++/6/ios \
- /usr/include/c++/6/iosfwd /usr/include/c++/6/bits/stringfwd.h \
- /usr/include/c++/6/bits/memoryfwd.h /usr/include/c++/6/bits/postypes.h \
- /usr/include/c++/6/cwchar /usr/include/wchar.h /usr/include/stdio.h \
- /usr/lib/gcc/x86_64-linux-gnu/6/include/stdarg.h \
- /usr/include/x86_64-linux-gnu/bits/wchar.h \
- /usr/lib/gcc/x86_64-linux-gnu/6/include/stddef.h /usr/include/xlocale.h \
- /usr/include/c++/6/exception \
- /usr/include/c++/6/bits/atomic_lockfree_defines.h \
- /usr/include/c++/6/bits/exception_ptr.h \
- /usr/include/c++/6/bits/exception_defines.h \
- /usr/include/c++/6/bits/nested_exception.h \
- /usr/include/c++/6/bits/move.h /usr/include/c++/6/bits/concept_check.h \
- /usr/include/c++/6/type_traits /usr/include/c++/6/bits/char_traits.h \
- /usr/include/c++/6/bits/stl_algobase.h \
- /usr/include/c++/6/bits/functexcept.h \
- /usr/include/c++/6/bits/cpp_type_traits.h \
- /usr/include/c++/6/ext/type_traits.h \
- /usr/include/c++/6/ext/numeric_traits.h \
- /usr/include/c++/6/bits/stl_pair.h \
- /usr/include/c++/6/bits/stl_iterator_base_types.h \
- /usr/include/c++/6/bits/stl_iterator_base_funcs.h \
- /usr/include/c++/6/debug/assertions.h \
- /usr/include/c++/6/bits/stl_iterator.h \
- /usr/include/c++/6/bits/ptr_traits.h /usr/include/c++/6/debug/debug.h \
- /usr/include/c++/6/bits/predefined_ops.h /usr/include/c++/6/cstdint \
- /usr/lib/gcc/x86_64-linux-gnu/6/include/stdint.h /usr/include/stdint.h \
- /usr/include/c++/6/bits/localefwd.h \
- /usr/include/x86_64-linux-gnu/c++/6/bits/c++locale.h \
- /usr/include/c++/6/clocale /usr/include/locale.h \
- /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/6/cctype \
- /usr/include/ctype.h /usr/include/x86_64-linux-gnu/bits/types.h \
- /usr/include/x86_64-linux-gnu/bits/typesizes.h /usr/include/endian.h \
- /usr/include/x86_64-linux-gnu/bits/endian.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap.h \
- /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
- /usr/include/c++/6/bits/ios_base.h /usr/include/c++/6/ext/atomicity.h \
- /usr/include/x86_64-linux-gnu/c++/6/bits/gthr.h \
- /usr/include/x86_64-linux-gnu/c++/6/bits/gthr-default.h \
- /usr/include/pthread.h /usr/include/sched.h /usr/include/time.h \
- /usr/include/x86_64-linux-gnu/bits/sched.h \
- /usr/include/x86_64-linux-gnu/bits/time.h \
- /usr/include/x86_64-linux-gnu/bits/timex.h \
- /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
- /usr/include/x86_64-linux-gnu/bits/setjmp.h \
- /usr/include/x86_64-linux-gnu/c++/6/bits/atomic_word.h \
- /usr/include/c++/6/bits/locale_classes.h /usr/include/c++/6/string \
- /usr/include/c++/6/bits/allocator.h \
- /usr/include/x86_64-linux-gnu/c++/6/bits/c++allocator.h \
- /usr/include/c++/6/ext/new_allocator.h /usr/include/c++/6/new \
- /usr/include/c++/6/bits/ostream_insert.h \
- /usr/include/c++/6/bits/cxxabi_forced.h \
- /usr/include/c++/6/bits/stl_function.h \
- /usr/include/c++/6/backward/binders.h \
- /usr/include/c++/6/bits/range_access.h \
- /usr/include/c++/6/initializer_list \
- /usr/include/c++/6/bits/basic_string.h \
- /usr/include/c++/6/ext/alloc_traits.h \
- /usr/include/c++/6/bits/alloc_traits.h \
- /usr/include/c++/6/ext/string_conversions.h /usr/include/c++/6/cstdlib \
- /usr/include/stdlib.h /usr/include/x86_64-linux-gnu/bits/waitflags.h \
- /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
- /usr/include/x86_64-linux-gnu/sys/types.h \
- /usr/include/x86_64-linux-gnu/sys/select.h \
- /usr/include/x86_64-linux-gnu/bits/select.h \
- /usr/include/x86_64-linux-gnu/bits/sigset.h \
- /usr/include/x86_64-linux-gnu/sys/sysmacros.h /usr/include/alloca.h \
- /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /usr/include/c++/6/cstdio /usr/include/libio.h /usr/include/_G_config.h \
- /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
- /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
- /usr/include/c++/6/cerrno /usr/include/errno.h \
- /usr/include/x86_64-linux-gnu/bits/errno.h /usr/include/linux/errno.h \
- /usr/include/x86_64-linux-gnu/asm/errno.h \
- /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
- /usr/include/c++/6/bits/functional_hash.h \
- /usr/include/c++/6/bits/hash_bytes.h \
- /usr/include/c++/6/bits/basic_string.tcc \
- /usr/include/c++/6/bits/locale_classes.tcc \
- /usr/include/c++/6/system_error \
- /usr/include/x86_64-linux-gnu/c++/6/bits/error_constants.h \
- /usr/include/c++/6/stdexcept /usr/include/c++/6/streambuf \
- /usr/include/c++/6/bits/streambuf.tcc \
- /usr/include/c++/6/bits/basic_ios.h \
- /usr/include/c++/6/bits/locale_facets.h /usr/include/c++/6/cwctype \
- /usr/include/wctype.h \
- /usr/include/x86_64-linux-gnu/c++/6/bits/ctype_base.h \
- /usr/include/c++/6/bits/streambuf_iterator.h \
- /usr/include/x86_64-linux-gnu/c++/6/bits/ctype_inline.h \
- /usr/include/c++/6/bits/locale_facets.tcc \
- /usr/include/c++/6/bits/basic_ios.tcc \
- /usr/include/c++/6/bits/ostream.tcc /usr/include/c++/6/istream \
- /usr/include/c++/6/bits/istream.tcc /usr/include/c++/6/vector \
- /usr/include/c++/6/bits/stl_construct.h \
- /usr/include/c++/6/bits/stl_uninitialized.h \
- /usr/include/c++/6/bits/stl_vector.h \
- /usr/include/c++/6/bits/stl_bvector.h /usr/include/c++/6/bits/vector.tcc \
- /usr/include/c++/6/fstream /usr/include/c++/6/bits/codecvt.h \
- /usr/include/x86_64-linux-gnu/c++/6/bits/basic_file.h \
- /usr/include/x86_64-linux-gnu/c++/6/bits/c++io.h \
- /usr/include/c++/6/bits/fstream.tcc
-
-/usr/include/stdc-predef.h:
+Cart.o: Cart.cpp Cart.hpp \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iostream \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++config.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\os_defines.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\cpu_defines.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ostream \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ios \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iosfwd \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stringfwd.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\memoryfwd.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\postypes.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cwchar \
+ c:\mingw\include\wchar.h c:\mingw\include\_mingw.h \
+ c:\mingw\include\msvcrtver.h c:\mingw\include\w32api.h \
+ c:\mingw\include\sdkddkver.h c:\mingw\include\features.h \
+ c:\mingw\include\wctype.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\stddef.h \
+ c:\mingw\include\sys\types.h c:\mingw\include\stdio.h \
+ c:\mingw\include\sys/types.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\stdarg.h \
+ c:\mingw\include\stdlib.h c:\mingw\include\direct.h \
+ c:\mingw\include\sys/stat.h c:\mingw\include\conio.h \
+ c:\mingw\include\io.h c:\mingw\include\stdint.h c:\mingw\include\time.h \
+ c:\mingw\include\locale.h c:\mingw\include\process.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\exception \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception_ptr.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception_defines.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cxxabi_init_exception.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\typeinfo \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\hash_bytes.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\new \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\nested_exception.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\move.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\concept_check.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\type_traits \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\char_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_algobase.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\functexcept.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cpp_type_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\type_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\numeric_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_pair.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_types.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_funcs.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\assertions.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ptr_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\debug.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\predefined_ops.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cstdint \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\stdint.h \
+ c:\mingw\include\stdint.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\localefwd.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++locale.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\clocale \
+ c:\mingw\include\locale.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cctype \
+ c:\mingw\include\ctype.h c:\mingw\include\wctype.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ios_base.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\atomicity.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr-default.h \
+ c:\mingw\include\errno.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\atomic_word.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_classes.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\string \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\allocator.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++allocator.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\new_allocator.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ostream_insert.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cxxabi_forced.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_function.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\backward\binders.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\range_access.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\initializer_list \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_string.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\alloc_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\alloc_traits.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\string_conversions.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cstdlib \
+ c:\mingw\include\stdlib.h c:\mingw\include\errno.h \
+ c:\mingw\include\alloca.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\std_abs.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cstdio \
+ c:\mingw\include\stdio.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cerrno \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\functional_hash.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_string.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_classes.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\system_error \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\error_constants.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\stdexcept \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\streambuf \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\streambuf.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_ios.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cwctype \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\ctype_base.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\streambuf_iterator.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\ctype_inline.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_ios.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ostream.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\istream \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\istream.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\vector \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_construct.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_uninitialized.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_vector.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_bvector.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\vector.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\fstream \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\codecvt.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\basic_file.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++io.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\fstream.tcc
 
 Cart.hpp:
 
-/usr/include/c++/6/iostream:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iostream:
 
-/usr/include/x86_64-linux-gnu/c++/6/bits/c++config.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++config.h:
 
-/usr/include/x86_64-linux-gnu/c++/6/bits/os_defines.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\os_defines.h:
 
-/usr/include/features.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\cpu_defines.h:
 
-/usr/include/x86_64-linux-gnu/sys/cdefs.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ostream:
 
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ios:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iosfwd:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stringfwd.h:
 
-/usr/include/x86_64-linux-gnu/c++/6/bits/cpu_defines.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\memoryfwd.h:
 
-/usr/include/c++/6/ostream:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\postypes.h:
 
-/usr/include/c++/6/ios:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cwchar:
 
-/usr/include/c++/6/iosfwd:
+c:\mingw\include\wchar.h:
 
-/usr/include/c++/6/bits/stringfwd.h:
+c:\mingw\include\_mingw.h:
 
-/usr/include/c++/6/bits/memoryfwd.h:
+c:\mingw\include\msvcrtver.h:
 
-/usr/include/c++/6/bits/postypes.h:
+c:\mingw\include\w32api.h:
 
-/usr/include/c++/6/cwchar:
+c:\mingw\include\sdkddkver.h:
 
-/usr/include/wchar.h:
+c:\mingw\include\features.h:
 
-/usr/include/stdio.h:
+c:\mingw\include\wctype.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/6/include/stdarg.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\stddef.h:
 
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
+c:\mingw\include\sys\types.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/6/include/stddef.h:
+c:\mingw\include\stdio.h:
 
-/usr/include/xlocale.h:
+c:\mingw\include\sys/types.h:
 
-/usr/include/c++/6/exception:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\stdarg.h:
 
-/usr/include/c++/6/bits/atomic_lockfree_defines.h:
+c:\mingw\include\stdlib.h:
 
-/usr/include/c++/6/bits/exception_ptr.h:
+c:\mingw\include\direct.h:
 
-/usr/include/c++/6/bits/exception_defines.h:
+c:\mingw\include\sys/stat.h:
 
-/usr/include/c++/6/bits/nested_exception.h:
+c:\mingw\include\conio.h:
 
-/usr/include/c++/6/bits/move.h:
+c:\mingw\include\io.h:
 
-/usr/include/c++/6/bits/concept_check.h:
+c:\mingw\include\stdint.h:
 
-/usr/include/c++/6/type_traits:
+c:\mingw\include\time.h:
 
-/usr/include/c++/6/bits/char_traits.h:
+c:\mingw\include\locale.h:
 
-/usr/include/c++/6/bits/stl_algobase.h:
+c:\mingw\include\process.h:
 
-/usr/include/c++/6/bits/functexcept.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\exception:
 
-/usr/include/c++/6/bits/cpp_type_traits.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception.h:
 
-/usr/include/c++/6/ext/type_traits.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception_ptr.h:
 
-/usr/include/c++/6/ext/numeric_traits.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\exception_defines.h:
 
-/usr/include/c++/6/bits/stl_pair.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cxxabi_init_exception.h:
 
-/usr/include/c++/6/bits/stl_iterator_base_types.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\typeinfo:
 
-/usr/include/c++/6/bits/stl_iterator_base_funcs.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\hash_bytes.h:
 
-/usr/include/c++/6/debug/assertions.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\new:
 
-/usr/include/c++/6/bits/stl_iterator.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\nested_exception.h:
 
-/usr/include/c++/6/bits/ptr_traits.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\move.h:
 
-/usr/include/c++/6/debug/debug.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\concept_check.h:
 
-/usr/include/c++/6/bits/predefined_ops.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\type_traits:
 
-/usr/include/c++/6/cstdint:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\char_traits.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/6/include/stdint.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_algobase.h:
 
-/usr/include/stdint.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\functexcept.h:
 
-/usr/include/c++/6/bits/localefwd.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cpp_type_traits.h:
 
-/usr/include/x86_64-linux-gnu/c++/6/bits/c++locale.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\type_traits.h:
 
-/usr/include/c++/6/clocale:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\numeric_traits.h:
 
-/usr/include/locale.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_pair.h:
 
-/usr/include/x86_64-linux-gnu/bits/locale.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_types.h:
 
-/usr/include/c++/6/cctype:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator_base_funcs.h:
 
-/usr/include/ctype.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\assertions.h:
 
-/usr/include/x86_64-linux-gnu/bits/types.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_iterator.h:
 
-/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ptr_traits.h:
 
-/usr/include/endian.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\debug\debug.h:
 
-/usr/include/x86_64-linux-gnu/bits/endian.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\predefined_ops.h:
 
-/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cstdint:
 
-/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\stdint.h:
 
-/usr/include/c++/6/bits/ios_base.h:
+c:\mingw\include\stdint.h:
 
-/usr/include/c++/6/ext/atomicity.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\localefwd.h:
 
-/usr/include/x86_64-linux-gnu/c++/6/bits/gthr.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++locale.h:
 
-/usr/include/x86_64-linux-gnu/c++/6/bits/gthr-default.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\clocale:
 
-/usr/include/pthread.h:
+c:\mingw\include\locale.h:
 
-/usr/include/sched.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cctype:
 
-/usr/include/time.h:
+c:\mingw\include\ctype.h:
 
-/usr/include/x86_64-linux-gnu/bits/sched.h:
+c:\mingw\include\wctype.h:
 
-/usr/include/x86_64-linux-gnu/bits/time.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ios_base.h:
 
-/usr/include/x86_64-linux-gnu/bits/timex.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\atomicity.h:
 
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr.h:
 
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\gthr-default.h:
 
-/usr/include/x86_64-linux-gnu/c++/6/bits/atomic_word.h:
+c:\mingw\include\errno.h:
 
-/usr/include/c++/6/bits/locale_classes.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\atomic_word.h:
 
-/usr/include/c++/6/string:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_classes.h:
 
-/usr/include/c++/6/bits/allocator.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\string:
 
-/usr/include/x86_64-linux-gnu/c++/6/bits/c++allocator.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\allocator.h:
 
-/usr/include/c++/6/ext/new_allocator.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++allocator.h:
 
-/usr/include/c++/6/new:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\new_allocator.h:
 
-/usr/include/c++/6/bits/ostream_insert.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ostream_insert.h:
 
-/usr/include/c++/6/bits/cxxabi_forced.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\cxxabi_forced.h:
 
-/usr/include/c++/6/bits/stl_function.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_function.h:
 
-/usr/include/c++/6/backward/binders.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\backward\binders.h:
 
-/usr/include/c++/6/bits/range_access.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\range_access.h:
 
-/usr/include/c++/6/initializer_list:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\initializer_list:
 
-/usr/include/c++/6/bits/basic_string.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_string.h:
 
-/usr/include/c++/6/ext/alloc_traits.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\alloc_traits.h:
 
-/usr/include/c++/6/bits/alloc_traits.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\alloc_traits.h:
 
-/usr/include/c++/6/ext/string_conversions.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\string_conversions.h:
 
-/usr/include/c++/6/cstdlib:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cstdlib:
 
-/usr/include/stdlib.h:
+c:\mingw\include\stdlib.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitflags.h:
+c:\mingw\include\errno.h:
 
-/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+c:\mingw\include\alloca.h:
 
-/usr/include/x86_64-linux-gnu/sys/types.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\std_abs.h:
 
-/usr/include/x86_64-linux-gnu/sys/select.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cstdio:
 
-/usr/include/x86_64-linux-gnu/bits/select.h:
+c:\mingw\include\stdio.h:
 
-/usr/include/x86_64-linux-gnu/bits/sigset.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cerrno:
 
-/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\functional_hash.h:
 
-/usr/include/alloca.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_string.tcc:
 
-/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_classes.tcc:
 
-/usr/include/c++/6/cstdio:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\system_error:
 
-/usr/include/libio.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\error_constants.h:
 
-/usr/include/_G_config.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\stdexcept:
 
-/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\streambuf:
 
-/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\streambuf.tcc:
 
-/usr/include/c++/6/cerrno:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_ios.h:
 
-/usr/include/errno.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets.h:
 
-/usr/include/x86_64-linux-gnu/bits/errno.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\cwctype:
 
-/usr/include/linux/errno.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\ctype_base.h:
 
-/usr/include/x86_64-linux-gnu/asm/errno.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\streambuf_iterator.h:
 
-/usr/include/asm-generic/errno.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\ctype_inline.h:
 
-/usr/include/asm-generic/errno-base.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\locale_facets.tcc:
 
-/usr/include/c++/6/bits/functional_hash.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\basic_ios.tcc:
 
-/usr/include/c++/6/bits/hash_bytes.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\ostream.tcc:
 
-/usr/include/c++/6/bits/basic_string.tcc:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\istream:
 
-/usr/include/c++/6/bits/locale_classes.tcc:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\istream.tcc:
 
-/usr/include/c++/6/system_error:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\vector:
 
-/usr/include/x86_64-linux-gnu/c++/6/bits/error_constants.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_construct.h:
 
-/usr/include/c++/6/stdexcept:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_uninitialized.h:
 
-/usr/include/c++/6/streambuf:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_vector.h:
 
-/usr/include/c++/6/bits/streambuf.tcc:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_bvector.h:
 
-/usr/include/c++/6/bits/basic_ios.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\vector.tcc:
 
-/usr/include/c++/6/bits/locale_facets.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\fstream:
 
-/usr/include/c++/6/cwctype:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\codecvt.h:
 
-/usr/include/wctype.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\basic_file.h:
 
-/usr/include/x86_64-linux-gnu/c++/6/bits/ctype_base.h:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\mingw32\bits\c++io.h:
 
-/usr/include/c++/6/bits/streambuf_iterator.h:
-
-/usr/include/x86_64-linux-gnu/c++/6/bits/ctype_inline.h:
-
-/usr/include/c++/6/bits/locale_facets.tcc:
-
-/usr/include/c++/6/bits/basic_ios.tcc:
-
-/usr/include/c++/6/bits/ostream.tcc:
-
-/usr/include/c++/6/istream:
-
-/usr/include/c++/6/bits/istream.tcc:
-
-/usr/include/c++/6/vector:
-
-/usr/include/c++/6/bits/stl_construct.h:
-
-/usr/include/c++/6/bits/stl_uninitialized.h:
-
-/usr/include/c++/6/bits/stl_vector.h:
-
-/usr/include/c++/6/bits/stl_bvector.h:
-
-/usr/include/c++/6/bits/vector.tcc:
-
-/usr/include/c++/6/fstream:
-
-/usr/include/c++/6/bits/codecvt.h:
-
-/usr/include/x86_64-linux-gnu/c++/6/bits/basic_file.h:
-
-/usr/include/x86_64-linux-gnu/c++/6/bits/c++io.h:
-
-/usr/include/c++/6/bits/fstream.tcc:
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\fstream.tcc:

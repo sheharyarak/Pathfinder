@@ -8,7 +8,6 @@ int		main()
 
 	UI ui("Pathfinder");
 	std::string inv = ui.param("Inventory");
-	std::string cart = ui.param("Cart");
 	std::string map = ui.param("Map");
 	Pathfinder p;
 	p.readMap(map);
