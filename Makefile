@@ -49,6 +49,7 @@ WebAppWin:
 	make Map.cgi
 	make Inventory.cgi
 	mv Pathfinder.cgi Map.cgi Inventory.cgi C:\xampp\cgi-bin\Pathfinder
+	cp Map.tsv Inventory.txt C:\xampp\cgi-bin\Pathfinder
 
 WebAppLin:
 	make Pathfinder.exe
@@ -56,6 +57,7 @@ WebAppLin:
 	make Map.cgi
 	make Inventory.cgi
 	mv Pathfinder.cgi Map.cgi Inventory.cgi /usr/lib/cgi-bin/Pathfinder
+	cp Map.tsv Inventory.txt /usr/lib/cgi-bin/Pathfinder
 
 
 clean:
