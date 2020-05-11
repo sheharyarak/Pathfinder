@@ -7,12 +7,12 @@ int		main()
 
 	UI ui("Inventory");
 	Inventory	inv;
-	inv.readInventory(ui.param("inventory"));
+	inv.readInventory(ui.param("Inventory"));
 	std::cout	<<	"<body>" << std::endl
-				<<	"	<form action=\"http://localhost:8080/cgi-bin/Map.cgi\">" << std::endl
-				<<	"		<input type=\"hidden\" name=\"InvFile\" value=\"" << ui.param("inventory") << "\"" << std::endl;
+				<<	"<form action=\"http://localhost/cgi-bin/Pathfinder/Map.cgi\">" << std::endl
+				<<	"<input type=\"hidden\" name=\"Inventory\" value=\"" << ui.param("Inventory") << "\">" << std::endl;
 	inv.print_html_list();
-	std::cout	<<	"		<button type=\"submit\">add to cart</submit>" << std::endl
-				<<	"	</form>" << std::endl
+	std::cout	<<	"<button type=\"submit\">add to cart</submit>" << std::endl
+				<<	"</form>" << std::endl
 				<<	"</body>" << std::endl;
 }

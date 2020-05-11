@@ -17,7 +17,7 @@ void			Inventory::readInventory(std::string filename)
 	size_t	item_num;
 	if(!in.is_open())
 	{
-		std::cerr << "Could not open file to read inventory." << std::endl;
+		std::cerr << "Could not open file [" << filename <<"] to read inventory." << std::endl;
 		exit(-3);
 	}
 	while(!in.eof())
@@ -59,8 +59,10 @@ void	Inventory::print_html_list()
 {
 	for(auto iter = inventory.begin(); iter != inventory.end(); iter++)
 	{
+		if(iter->second > 4)
 		std::cout << "<input type=\"checkbox\" id=\"" << iter->second << "\" name=\"" << iter->second << "\" value=\"" << iter->first << "\">" << std::endl
-  		<< "<label for=\"" << iter->second << "\"> I have a bike</label><br>" << std::endl;
+  		<< "<label for=\"" << iter->second << "\">"<< iter->first <<"</label><br>" << std::endl;
+		//   std::cout<<"<input type=\"checkbox\"><p>item</p><br>"<<std::endl;
 	}
 
 }

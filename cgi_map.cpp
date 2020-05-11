@@ -6,20 +6,25 @@ int		main()
 {
 
 	UI ui("Map");
+	// std::cerr << "here" << std::endl;
 	std::ofstream cart("cart.txt");
+	// std::cerr << "here" << std::endl;
 	for(auto iter = ui.queries().begin(); iter != ui.queries().end(); iter++)
 	{
-		if(iter != ui.queries().begin())
+		// std::cerr << "here" << std::endl;
+		if(iter->first != "Inventory")
 			cart << iter->second << std::endl;
+		std::cout << iter->first << " --> " << iter->second << std::endl;
 	}
-	std::string inv = ui.param("inventory");
-	
-	std::cout	<<	"<body>" << std::endl
-				<<	"	<form action=\"http://localhost:8080/cgi-bin/Pathfinder.cgi\">" << std::endl
-				<<	"		<input type=\"hidden\" name=\"Inv\" value=\"" << ui.param("inventory") << "\">" << std::endl
-				<<	"		<input type=\"hidden\" name=\"Cart\" value=\"" << ui.param("cart") << "\">"  << std::endl
-				<<	"		<input type=\"radio\" name=\"Map\" value=\"" << "Map.tsv" << "\" id=\"" << "Map.tsv" << "\"" << ">" << std::endl;
-	std::cout	<<	"		<button type=\"submit\">add to cart</submit>" << std::endl
-				<<	"	</form>" << std::endl
-				<<	"</body>" << std::endl;
+	// std::string inv = ui.param("Inventory");
+	std::cout << "here" << std::endl;
+	std::cout	<<	"<body>" << std::endl;
+	std::cout	<<	"<p>" << ui.get_query_string() << "</p>";
+	std::cout	<<	"	<form action=\"http://localhost/cgi-bin/Pathfinder/Pathfinder.cgi\">" << std::endl;
+	std::cout	<<	"		<input type=\"hidden\" name=\"Inventory\" value=\"" << ui.param("Inventory") << "\">" << std::endl;
+	std::cout	<<	"		<input type=\"hidden\" name=\"Cart\" value=\"" << "cart.txt" << "\">"  << std::endl;
+	std::cout	<<	"		<input type=\"radio\" name=\"Map\" value=\"" << "Map.tsv" << "\" id=\"" << "Map.tsv" << "\"" << ">" << std::endl;
+	std::cout	<<	"		<button type=\"submit\">Find Shortest Route</submit>" << std::endl;
+	std::cout	<<	"	</form>" << std::endl;
+	std::cout	<<	"</body>" << std::endl;
 }

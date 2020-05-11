@@ -7,7 +7,7 @@ int		main()
 {
 
 	UI ui("Pathfinder");
-	std::string inv = ui.param("Inv");
+	std::string inv = ui.param("Inventory");
 	std::string cart = ui.param("Cart");
 	std::string map = ui.param("Map");
 
