@@ -26,6 +26,7 @@ void		UI::print_html_header()
 	<< "<html>" << std::endl
 	<< "<head>" << std::endl
 	<< "<title>" << _title << "</title>" << std::endl
+	<< "<meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>"
 	<< "</head>" << std::endl;
 	_query_string = getenv("QUERY_STRING");
 	//~ _query_string = "Inventory=Inventory.txt&Cart=cart.txt&Map=Map.tsv";
