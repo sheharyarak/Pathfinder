@@ -43,6 +43,12 @@ $(MGI): $(MGIOBJS)
 $(IGI): $(IGIOBJS)
 	$(CC) $^ -o $@
 
+InitCGILin:
+	mkdir /usr/lib/cgi-bin/Pathfinder
+
+InitCGIWin:
+	mkdir C:\xampp\cgi-bin\Pathfinder
+
 WebAppWin:
 	make Pathfinder.exe
 	make Pathfinder.cgi

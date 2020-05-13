@@ -1,4 +1,5 @@
 #include "UI.hpp"
+#include <exception>
 
 UI::~UI()
 {
@@ -28,7 +29,20 @@ void		UI::print_html_header()
 	<< "<title>" << _title << "</title>" << std::endl
 	<< "<meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>"
 	<< "</head>" << std::endl;
-	_query_string = getenv("QUERY_STRING");
+	try{
+		char* env = getenv("QUERY_STRING");
+		if(env == nullptr) throw std::exception();
+		else _query_string = env;
+	}
+	catch (std::exception& e)
+	{
+		if(_title == "Inventory")
+			_query_string = "Inventory=Inventory.txt";
+		else if (_title == "Map")
+			_query_string = "Inventory=Inventory.txt&item=buckel&item=checkbook&item=drill+press&item=leg+warmers&item=sand+paper&item=spring&item=towel&item=white+out";
+		else
+			_query_string = "Inventory=Inventory.txt&Map=Map.tsv&item=buckel&item=checkbook&item=drill+press&item=leg+warmers&item=sand+paper&item=spring&item=towel&item=white+out";
+	}
 	//~ _query_string = "Inventory=Inventory.txt&Cart=cart.txt&Map=Map.tsv";
 	for(size_t i = 0; i < _query_string.length(); i++)
 		if(_query_string[i]=='+')

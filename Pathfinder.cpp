@@ -254,13 +254,12 @@ bool	sort_by_distance(std::pair<double, Coords> lhs, std::pair<double, Coords> r
 	return	lhs.first < rhs.first;
 }
 
-void	Pathfinder::sort_items_by_distance()
+void	Pathfinder::sort_items_by_distance(Coords pos)
 {
 	Path	sorted;
-	Coords	entrance = get_coords("Entrance");
 	std::vector<std::pair<double, Coords>> tmp;
 	for(Coords item: _items)
-		tmp.push_back(std::pair<double, Coords>(distance(entrance, item), item));
+		tmp.push_back(std::pair<double, Coords>(distance(pos, item), item));
 	std::sort(tmp.begin(), tmp.end(), sort_by_distance);
 	for(auto pair : tmp)
 		sorted.push_back(pair.second);
@@ -277,22 +276,25 @@ Path	Pathfinder::generate()
 	Path path, tmp;
 	Coords	start = get_coords("Entrance");
 	fill_items();
-	// std::cout << "items list: " << path_to_string(_items) << std::endl;
-	sort_items_by_distance();
+	Path	items = _items;
+	std::cout << "items list: " << path_to_string(items) << "<br>" << std::endl;
 	// std::cout << "sorted items list: " << path_to_string(_items) << std::endl;
-	for(Coords item : _items)
+	while(_items.size() > 0)
 	{
+		sort_items_by_distance(start);
 		// std::cout << "Finding path from " << coord_to_string(start) << " to " << coord_to_string(item) << std::endl;
-		tmp = find_path(start, item);
+		tmp = find_path(start, _items[0]);
 		// std::cout << "tmp = " << path_to_string(tmp) << std::endl;
 		for(Coords coord: tmp)
 			path.push_back(coord);
-		start = path[path.size()-1];
+		start = path[path.size()-2];
+		_items.erase(_items.begin());
 	}
 	tmp = find_path(start, get_coords("Exit"));
 	for(Coords coord: tmp)
 			path.push_back(coord);
 	_path = path;
+	_items = items;
 	return path;
 }
 

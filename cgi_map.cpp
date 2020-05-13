@@ -19,7 +19,7 @@ int		main()
 	// std::cout	<<	"<p>" << ui.get_query_string() << "</p>";
 	std::cout	<<	"	<form action=\"http://localhost:8080/cgi-bin/Pathfinder/Pathfinder.cgi\">" << std::endl;
 	std::cout	<<	"		<input type=\"hidden\" name=\"Inventory\" value=\"" << ui.param("Inventory") << "\">" << std::endl;
-	std::cout	<<	"		<input type=\"hidden\" name=\"Cart\" value=\"" << "cart.txt" << "\">"  << std::endl;
+	// std::cout	<<	"		<input type=\"hidden\" name=\"Cart\" value=\"" << "cart.txt" << "\">"  << std::endl;
 	std::cout	<<	"		<input type=\"radio\" name=\"Map\" value=\"" << "Map.tsv" << "\" id=\"" << "Map.tsv" << "\"" << ">" << std::endl;
 	for(size_t i = 0; i < ui.queries().size(); i++)
 	{
