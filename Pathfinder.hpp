@@ -56,8 +56,10 @@ private:
 	
 public:
 	//	getters
+	size_t		path_count = 0;
 	Cart		cart()		const;
 	Map			map()		const;
+	Map*		map_view()		const;
 	Path		path()		const;
 	Inventory	inventory()	const;
 	Path		items()		const;

@@ -28,6 +28,7 @@ void		UI::print_html_header()
 	<< "<head>" << std::endl
 	<< "<title>" << _title << "</title>" << std::endl
 	<< "<meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css\">\n  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js\"></script>\n  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js\"></script>"
+	<< "<style>\n\tbody {\n\tbackground: #1b212c;\n\tfont-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n\tcolor: #fff;\n\tfont-size: 24px;\n\t}\n\t.ck-button {\n    margin:4px;\n    background-color:rgb(255, 0, 149);\n    border-radius:4px;\n    border:1px solid rgba(0, 0, 0, 0.678);\n    overflow:auto;\n    float:left;\n    /*padding: 5px 5px 5px 5px;*/\n\t}\n\n\t.ck-button label {\n\t\tdisplay:block;\n\t\twidth:5.0em;\n\t}\n\n\t.ck-button label span {\n\t\ttext-align:center;\n\t\tpadding:5px 5px;\n\t\tdisplay:block;\n\t}\n\n\t.ck-button label input {\n\t\tposition:absolute;\n\t\topacity:0;\n\t\t/*top:-20px;  don't use this thing use opacity:0 */\n\t}\n\n\t.ck-button input:checked + span {\n\t\tbackground-color: rgb(96, 226, 154);\n\t\tcolor:#fff;\n\t}\n</style>"
 	<< "</head>" << std::endl;
 	try{
 		char* env = getenv("QUERY_STRING");

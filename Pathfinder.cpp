@@ -11,6 +11,10 @@ Map			Pathfinder::map()	const
 {
 	return _map;
 }
+Map*		Pathfinder::map_view()	const
+{
+	return (Map*)(&_map);
+}
 Path		Pathfinder::path()	const
 {
 	return _path;
@@ -60,6 +64,7 @@ Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked)//, size_t cur
 	if((checked != nullptr && out_of_bounds(pos, checked)))// || current_size >= shortest_path)
 	{
 		// std::cout << "out of bounds: " << coord_to_string(pos) << std::endl;
+		path_count++;
 		return Path();
 	}
 	//	if default argument
@@ -114,6 +119,7 @@ Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked)//, size_t cur
 	if(final[final.size()-1] == end)
 	{
 		// std::cout << "returning path: " << path_to_string(final) << std::endl;
+		path_count++;
 		if(final.size() < shortest_path)
 			shortest_path = final.size();
 		return final;

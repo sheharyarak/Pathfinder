@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <string>
 #include <sstream>
+#include <vector>
 #include "Strings.hpp"
 
 size_t&	Inventory::operator[](std::string key)
@@ -67,12 +68,16 @@ void	Inventory::to_stringHTML()
 
 void	Inventory::print_html_list()
 {
+	std::vector<std::string> items;
 	for(auto iter = inventory.begin(); iter != inventory.end(); iter++)
 	{
 		if(iter->second > 4)
-		std::cout << "<input type=\"checkbox\" id=\"" << iter->second << "\" name=\"" << "item" << "\" value=\"" << iter->first << "\">" << std::endl
-  		<< "<label for=\"" << "item" << "\">"<< iter->first <<"</label><br>" << std::endl;
-		//   std::cout<<"<input type=\"checkbox\"><p>item</p><br>"<<std::endl;
+			items.push_back(iter->first);
 	}
+	for(int i = 0; i < items.size();++)
+	{
+		std::cout << "<div class=\"ck-button\">\n\t\t\t\t<label>\n\t\t\t\t   <input type=\"checkbox\" value=\"1\"><span>"<<items[i]<<"</span>\n\t\t\t\t</label>\n\t\t\t </div>" << std::endl;
+	}
+
 
 }
