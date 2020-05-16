@@ -77,6 +77,6 @@ WebAppLin:
 	./Pathfinder.cgi.exe > Path.html
 
 clean:
-	rm -f $(OBJS) $(POBJS) $(IOBJS) $(COBJS) $(MOBJS) $(EXE) $(MEXE) $(IEXE) $(PEXE) $(CGI) $(MGI) $(IGI) $(CGI).exe $(MGI).exe $(IGI).exe $(CGIOBJS) $(MGIOBJS) $(IGIOBJS)
+	rm -f $(OBJS) $(POBJS) $(IOBJS) $(COBJS) $(MOBJS) $(EXE) $(MEXE) $(IEXE) $(PEXE) $(CGI) $(MGI) $(IGI) $(CGI).exe $(MGI).exe $(IGI).exe $(CGIOBJS) $(MGIOBJS) $(IGIOBJS) *.d
 
 -include $(OBJS:.o=.d)
