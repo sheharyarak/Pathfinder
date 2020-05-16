@@ -53,7 +53,9 @@
 		"xtree": "cpp",
 		"locale": "cpp",
 		"xlocbuf": "cpp",
-		"xlocmes": "cpp"
+		"xlocmes": "cpp",
+		"chrono": "cpp",
+		"ratio": "cpp"
 	},
 	"C_Cpp.errorSquiggles": "Enabled"
 }

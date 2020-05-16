@@ -42,6 +42,7 @@ int		main()
 	std::cout << "}" << std::endl
 	<<	"</script>" << std::endl;
 	std::cout	<<	"<body>" << std::endl;
+	ui.color_body();
 	//~ std::cout	<<	"<p>Scale: " << p.map().scale() << " Path: " << path_to_string(p.path()) << "</p><br><br>" << std::endl;
 	std::cout	<<	"<canvas id=\"canvas1\" width=\"" << p.map().width() * p.map().scale() 
 	<< "\" height=\"" << p.map().height() * p.map().scale() <<"\"></canvas>" << std::endl;

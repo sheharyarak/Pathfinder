@@ -12,10 +12,11 @@ private:
 public:
 	Inventory(){}
 	size_t&	operator[](const std::string key);
-	void			print_html_list();
 	void			readInventory(std::string filename);
 	void			to_string();
 	void			to_stringHTML();
+	std::map<std::string, size_t>* inventory_ptr();
+	std::map<std::string, size_t>& get_inventory();
 };
 
 #endif

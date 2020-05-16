@@ -111,7 +111,7 @@ cgi_inventory.o: cgi_inventory.cpp \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_uninitialized.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_vector.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_bvector.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\vector.tcc Inventory.hpp \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\vector.tcc \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\map \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_tree.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\aligned_buffer.h \
@@ -121,7 +121,7 @@ cgi_inventory.o: cgi_inventory.cpp \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\uses_allocator.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\invoke.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_multimap.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\erase_if.h
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\erase_if.h Inventory.hpp
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\iostream:
 
@@ -373,8 +373,6 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_bvector.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\vector.tcc:
 
-Inventory.hpp:
-
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\map:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_tree.h:
@@ -394,3 +392,5 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\invoke.h:
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_multimap.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\erase_if.h:
+
+Inventory.hpp:

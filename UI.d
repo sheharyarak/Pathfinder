@@ -110,7 +110,17 @@ UI.o: UI.cpp UI.hpp c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\string \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_uninitialized.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_vector.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_bvector.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\vector.tcc
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\vector.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\map \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_tree.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\aligned_buffer.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_map.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\tuple \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\array \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\uses_allocator.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\invoke.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_multimap.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\erase_if.h
 
 UI.hpp:
 
@@ -361,3 +371,23 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_vector.h:
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_bvector.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\vector.tcc:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\map:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_tree.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\ext\aligned_buffer.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_map.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\tuple:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\array:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\uses_allocator.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\invoke.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_multimap.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\erase_if.h:

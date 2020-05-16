@@ -65,19 +65,13 @@ void	Inventory::to_stringHTML()
 	}
 	std::cout << "----------------end Inventory.to_stringHTML-----------------<br>" << std::endl;
 }
-
-void	Inventory::print_html_list()
+std::map<std::string, size_t>*	Inventory::inventory_ptr()
 {
-	std::vector<std::string> items;
-	for(auto iter = inventory.begin(); iter != inventory.end(); iter++)
-	{
-		if(iter->second > 4)
-			items.push_back(iter->first);
-	}
-	for(int i = 0; i < items.size();++)
-	{
-		std::cout << "<div class=\"ck-button\">\n\t\t\t\t<label>\n\t\t\t\t   <input type=\"checkbox\" value=\"1\"><span>"<<items[i]<<"</span>\n\t\t\t\t</label>\n\t\t\t </div>" << std::endl;
-	}
+	std::map<std::string, size_t>* ptr = &inventory;
+	return ptr;
+}
 
-
+std::map<std::string, size_t>& Inventory::get_inventory()
+{
+	return inventory;
 }

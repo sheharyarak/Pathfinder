@@ -132,13 +132,18 @@ Inventory.o: Inventory.cpp Inventory.hpp \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\unique_ptr.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\quoted_string.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\sstream \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\sstream.tcc Strings.hpp \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\sstream.tcc \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\vector \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_construct.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_uninitialized.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_vector.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_bvector.h \
+ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\vector.tcc Strings.hpp \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\algorithm \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_algo.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\algorithmfwd.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_heap.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_tempbuf.h \
- c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_construct.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\uniform_int_dist.h \
  c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\limits
 
@@ -436,6 +441,18 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\sstream:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\sstream.tcc:
 
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\vector:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_construct.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_uninitialized.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_vector.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_bvector.h:
+
+c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\vector.tcc:
+
 Strings.hpp:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\algorithm:
@@ -447,8 +464,6 @@ c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\algorithmfwd.h:
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_heap.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_tempbuf.h:
-
-c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\stl_construct.h:
 
 c:\mingw\lib\gcc\mingw32\9.2.0\include\c++\bits\uniform_int_dist.h:
 

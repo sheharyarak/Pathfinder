@@ -16,11 +16,12 @@ int		main()
 	// std::string inv = ui.param("Inventory");
 	// std::cout << "here" << std::endl;
 	std::cout	<<	"<body>" << std::endl;
+	ui.color_body();
 	// std::cout	<<	"<p>" << ui.get_query_string() << "</p>";
 	std::cout	<<	"	<form action=\"http://localhost:8080/cgi-bin/Pathfinder/Pathfinder.cgi\">" << std::endl;
 	std::cout	<<	"		<input type=\"hidden\" name=\"Inventory\" value=\"" << ui.param("Inventory") << "\">" << std::endl;
 	// std::cout	<<	"		<input type=\"hidden\" name=\"Cart\" value=\"" << "cart.txt" << "\">"  << std::endl;
-	std::cout	<<	"		<input type=\"radio\" name=\"Map\" value=\"" << "Map.tsv" << "\" id=\"" << "Map.tsv" << "\"" << ">" << std::endl;
+	std::cout	<<	"		<label><input type=\"radio\" name=\"Map\" value=\"" << "Map.tsv" << "\" id=\"" << "Map.tsv" << "\"" << ">Map.tsv</label>" << std::endl;
 	for(size_t i = 0; i < ui.queries().size(); i++)
 	{
 		//~ std::cerr << "here" << std::endl;
@@ -28,9 +29,9 @@ int		main()
 		{
 			std::cout << "<input type=\"hidden\" name=\"item\" value=\"" << ui.params().at(i) << "\">"  << std::endl;
 		}		
-		std::cout << ui.queries().at(i) << " --> " << ui.params().at(i) << std::endl;
+		// std::cout << ui.queries().at(i) << " --> " << ui.params().at(i) << std::endl;
 	}
-	std::cout	<<	"		<button type=\"submit\">Find Shortest Route</submit>" << std::endl;
+	std::cout	<<	"<div class=\"container\">\n  <div class=\"row\">\n    <div class=\"col-sm-5\"></div>\n    <div class=\"col-sm-2\"><button type=\"submit\" class=\"button\">Find shortest route</button></div>\n    <div class=\"col-sm-5\"></div>\n  </div>\n</div>" << std::endl;
 	std::cout	<<	"	</form>" << std::endl;
 	std::cout	<<	"</body>" << std::endl;
 }

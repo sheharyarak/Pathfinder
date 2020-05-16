@@ -8,19 +8,19 @@ PEXE:=PathfinderTest.exe
 
 CFLAGS:=-Wall
 
-OBJS:=Cart.o Inventory.o Map.o Pathfinder.o Main.o Strings.o
-MOBJS:=Map.o MapTest.o
-IOBJS:=Inventory.o InventoryTest.o Strings.o
-COBJS:=Cart.o CartTest.o
-POBJS:=Pathfinder.o PathfinderTest.o Map.o Strings.o
+MOBJS:=Map.o
+IOBJS:=Inventory.o Strings.o
+COBJS:=Cart.o
+POBJS:=Pathfinder.o $(MOBJS) $(COBJS) $(IOBJS) 
+OBJS:= $(POBJS) Main.o
 
 CGI:=Pathfinder.cgi
 MGI:=Map.cgi
 IGI:=Inventory.cgi
 
-CGIOBJS:=Cart.o Inventory.o Map.o Pathfinder.o cgi_main.o Strings.o UI.o
+CGIOBJS:=cgi_main.o UI.o $(POBJS)
 MGIOBJS:=cgi_map.o UI.o
-IGIOBJS:=Inventory.o cgi_inventory.o Strings.o UI.o
+IGIOBJS:=cgi_inventory.o UI.o $(IOBJS)
 
 
 %.o: %.cpp
@@ -34,14 +34,19 @@ $(IEXE): $(IOBJS)
 	$(CC) $^ -o $@
 $(CEXE): $(COBJS)
 	$(CC) $^ -o $@
-$(PEXE): $(OBJS)
+$(PEXE): $(POBJS)
 	$(CC) $^ -o $@
 $(CGI): $(CGIOBJS)
 	$(CC) $^ -o $@
+	$(CC) $^ -o $@.exe
 $(MGI): $(MGIOBJS)
 	$(CC) $^ -o $@
+	$(CC) $^ -o $@.exe
 $(IGI): $(IGIOBJS)
 	$(CC) $^ -o $@
+	$(CC) $^ -o $@.exe
+
+
 
 InitCGILin:
 	mkdir /usr/lib/cgi-bin/Pathfinder
@@ -54,19 +59,24 @@ WebAppWin:
 	make Pathfinder.cgi
 	make Map.cgi
 	make Inventory.cgi
-	mv Pathfinder.cgi Map.cgi Inventory.cgi C:\xampp\cgi-bin\Pathfinder
+	cp Pathfinder.cgi Map.cgi Inventory.cgi C:\xampp\cgi-bin\Pathfinder
 	cp Map.tsv Inventory.txt C:\xampp\cgi-bin\Pathfinder
+	./Inventory.cgi.exe > Inventory.html
+	./Map.cgi.exe > Map.html
+	./Pathfinder.cgi.exe > Path.html
 
 WebAppLin:
 	make Pathfinder.exe
 	make Pathfinder.cgi
 	make Map.cgi
 	make Inventory.cgi
-	mv Pathfinder.cgi Map.cgi Inventory.cgi /usr/lib/cgi-bin/Pathfinder
+	cp Pathfinder.cgi Map.cgi Inventory.cgi /usr/lib/cgi-bin/Pathfinder
 	cp Map.tsv Inventory.txt /usr/lib/cgi-bin/Pathfinder
-
+	./Inventory.cgi.exe > Inventory.html
+	./Map.cgi.exe > Map.html
+	./Pathfinder.cgi.exe > Path.html
 
 clean:
-	rm -f $(OBJS) $(EXE)
+	rm -f $(OBJS) $(POBJS) $(IOBJS) $(COBJS) $(MOBJS) $(EXE) $(MEXE) $(IEXE) $(PEXE) $(CGI) $(MGI) $(IGI) $(CGI).exe $(MGI).exe $(IGI).exe $(CGIOBJS) $(MGIOBJS) $(IGIOBJS)
 
 -include $(OBJS:.o=.d)

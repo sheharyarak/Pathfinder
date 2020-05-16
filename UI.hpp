@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <utility>
 #include <vector>
+#include <map>
 
 class UI
 {
@@ -27,10 +28,11 @@ public:
 	void		set_title(std::string title)	const;
 	void		print_html_header();
 	void		parse();
+	void		color_body();
 	std::string	param(std::string query);
 	std::vector<std::string>	queries() const; 
 	std::vector<std::string>	params() const; 
-
+	void		print_check_box_from_list(std::map<std::string, size_t>& map);
 };
 
 
