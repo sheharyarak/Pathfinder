@@ -76,7 +76,7 @@ WebAppWin:
 	make Map.cgi
 	make Inventory.cgi
 	# Copies the CGI files to the cgi-bin
-	cp Pathfinder.cgi Map.cgi Inventory.cgi C:\xampp\cgi-bin\Pathfinder
+	cp Pathfinder.cgi Map.cgi Inventory.cgi icon.png C:\xampp\cgi-bin\Pathfinder
 	cp Map.tsv Inventory.txt C:\xampp\cgi-bin\Pathfinder
 	# Directs output of the %.cgi.exe files to %.html for easy debugging
 	./Inventory.cgi.exe > Inventory.html
@@ -89,7 +89,7 @@ WebAppLin:
 	make Pathfinder.cgi
 	make Map.cgi
 	make Inventory.cgi
-	cp Pathfinder.cgi Map.cgi Inventory.cgi /usr/lib/cgi-bin/Pathfinder
+	cp Pathfinder.cgi Map.cgi Inventory.cgi icon.png /usr/lib/cgi-bin/Pathfinder
 	cp Map.tsv Inventory.txt /usr/lib/cgi-bin/Pathfinder
 	./Inventory.cgi.exe > Inventory.html
 	./Map.cgi.exe > Map.html
