@@ -1,29 +1,37 @@
 #include "UI.hpp"
 #include <exception>
 
+// destructor closes html tag
 UI::~UI()
 {
 	std::cout << "</html>" << std::endl;
 }
 
+// constructor
 UI::UI(std::string title)
 {
+	// initializes argc and pos
 	size_t ac = 0,pos = -1;
 	_title = title;
+	// prints the header for html
 	print_html_header();
+	// count number of arguments
 	do{
 		pos = _query_string.find("=", pos+1);
 		if(pos != std::string::npos)
 			ac++;
-		// std::cout <<"pos: " << pos << " ac: " << ac << std::endl;
+		//// std::cout <<"pos: " << pos << " ac: " << ac << std::endl;
 	}
 	while (pos != std::string::npos);
 	_argc = ac;
+	// parse query string 
 	parse();
 }
 
+// color body to random color
 void		UI::color_body()
 {
+	// javascript
 	std::cout << "<script>\n";
 	std::cout << "   function random_bg_color() {\n      var x = Math.floor(Math.random() * 256);\n      var y = Math.floor(Math.random() * 256);\n      var z = Math.floor(Math.random() * 256);\n      var bgColor = \"rgb(\" + x + \",\" + y + \",\" + z + \")\";\n      console.log(bgColor);\n      document.body.style.background = bgColor;\n    }\n    document.onload = random_bg_color();\n\tdocument.body.addEventListener('click', function(e){\n    \trandom_bg_color();\n\t});\n";
 	// std::cout << "$(\":checkbox\").on(\"change\", function() {\n    var that = this;\n    $(this).parent().css(\"background-color\", function() {\n        return that.checked ? \"#ff0000\" : \"\";\n    });\n});\n​";
@@ -31,8 +39,11 @@ void		UI::color_body()
 
 }
 
+// print header for html
 void		UI::print_html_header()
 {
+	// little bit of html
+	// a whole lot of css
 	std::cout << "Content-type: text/html\n\n" << std::endl
 	<< "<html>" << std::endl
 	<< "<head>" << std::endl
@@ -317,6 +328,8 @@ void		UI::print_html_header()
 	<< ""
 	
 	<< "</head>" << std::endl;
+	// using try and catch to allow testing an executable instead of cgi
+	// very useful for html and cgi debugging
 	try{
 		char* env = getenv("QUERY_STRING");
 		if(env == nullptr) throw std::exception();
@@ -331,11 +344,14 @@ void		UI::print_html_header()
 		else
 			_query_string = "Inventory=Inventory.txt&Map=Map.tsv&item=buckel&item=checkbook&item=drill+press&item=leg+warmers&item=sand+paper&item=spring&item=towel&item=white+out";
 	}
-	//~ _query_string = "Inventory=Inventory.txt&Cart=cart.txt&Map=Map.tsv";
+	////~ _query_string = "Inventory=Inventory.txt&Cart=cart.txt&Map=Map.tsv";
+	// changes the '+' in the query string to a space
 	for(size_t i = 0; i < _query_string.length(); i++)
 		if(_query_string[i]=='+')
 			_query_string[i] = ' ';
 }
+
+// setters and getters
 void		UI::set_query_string(std::string qs)
 {
 	_query_string = qs;
@@ -352,33 +368,52 @@ size_t		UI::get_argc()	const
 {
 	return _argc;
 }
+std::vector<std::string>	UI::queries() const
+{
+	return _queries;
+}
+
+std::vector<std::string>	UI::params() const
+{
+	return _params;
+}
+
+// parse query string
 void		UI::parse()
 {
+	// query and parm strings
 	std::string query, param;
+	// start and current positions
 	size_t		start = 0, curr;
-
-	// std::cout << "parsing qs: " << _query_string << std::endl;
+	//// std::cout << "parsing qs: " << _query_string << std::endl;
+	// assume query_string = query=param
 	for (size_t i = 0; i < _argc; i++)
 	{
-		// std::cout << "at arg: " << i << std::endl;
+		//// std::cout << "at arg: " << i << std::endl;
 		curr = _query_string.find("=", start);
 		if(curr == std::string::npos)
 		{
+			// if no '=' found break out of the string
 			break;
 		}
+		// query = query
 		query = _query_string.substr(start, curr - start);
-		// std::cout << "query: " << query << std::endl;
+		//// std::cout << "query: " << query << std::endl;
 		start = curr + 1;
 		curr = _query_string.find("&", start);
+		// param = param 
 		param = _query_string.substr(start, curr-start);
-		// std::cout << "param: " << param << std::endl;
+		//// std::cout << "param: " << param << std::endl;
+		// add query and param to vectors
 		_queries.push_back(query);
 		_params.push_back(param);
 		start = curr + 1;
 	}
-	//~ for(size_t i = 0; i < _queries.size(); i++)
-		//~ std::cout << _queries[i] << " --> " << _params[i] << std::endl;
+	////~ for(size_t i = 0; i < _queries.size(); i++)
+		////~ std::cout << _queries[i] << " --> " << _params[i] << std::endl;
 }
+
+// gets param associated with query
 std::string	UI::param(std::string query)
 {
 	size_t i = 0;
@@ -390,18 +425,11 @@ std::string	UI::param(std::string query)
 	return _params[i];
 }
 
-std::vector<std::string>	UI::queries() const
-{
-	return _queries;
-}
-
-std::vector<std::string>	UI::params() const
-{
-	return _params;
-}
+// prints checkbox list in html format
 void		UI::print_check_box_from_list(std::map<std::string, size_t>& map)
 {
 	int i = 0; 
+	// using bootstrap container; a bunch of html
 	std::cout << "\n<div class=\"container\">" <<std::endl; 
 	for(auto iter = map.begin(); iter != map.end(); iter++)
 	{
@@ -414,7 +442,7 @@ void		UI::print_check_box_from_list(std::map<std::string, size_t>& map)
 				std::cout <<"<div class = \"row\">";
 			}
 			std::cout << "<div class=\"col-sm-3\">\n";
-			// std::cout << "<label><div class=\"checkbox-div\"><input type=\"checkbox\" name=\"item\" value=\""<< iter->first <<"\">"<< iter->first <<"</div></label>";
+			//// std::cout << "<label><div class=\"checkbox-div\"><input type=\"checkbox\" name=\"item\" value=\""<< iter->first <<"\">"<< iter->first <<"</div></label>";
 			std::cout	<<	"<label for=\""<<iter->first<<"\">\n"
 						<<	"    <input type=\"checkbox\" id=\""<<iter->first<<"\" name=\"item\" value=\""<<iter->first<<"\" class=\"check\" style=\"display: none;\" />\n"
 						<<	"    <div class=\"item\">\n"
@@ -424,7 +452,7 @@ void		UI::print_check_box_from_list(std::map<std::string, size_t>& map)
 						<<	"    </div>\n"
 						<<	"</label>";
 			std::cout << "</div>" << std::endl;
-			// std::cout <<"<label><input type=\"checkbox\" name=\"item\" value=\""<< iter->first <<"\">"<< iter->first <<"</label>" <<std::endl;
+			//// std::cout <<"<label><input type=\"checkbox\" name=\"item\" value=\""<< iter->first <<"\">"<< iter->first <<"</label>" <<std::endl;
 		i++;
 		}
 	}

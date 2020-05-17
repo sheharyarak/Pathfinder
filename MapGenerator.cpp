@@ -3,6 +3,7 @@
 #include <fstream>
 #include <cstdlib>
 
+// Creates empty map of size given in param
 int main(int argc, char *argv[])
 {
 	if(argc != 3) return -1;

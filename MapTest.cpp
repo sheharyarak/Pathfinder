@@ -1,5 +1,6 @@
 #include "Map.hpp"
 
+// Tester for Map object
 int		main(int argc, char	*argv[])
 {
 	std::string 	path;

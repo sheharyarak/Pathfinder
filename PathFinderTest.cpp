@@ -1,6 +1,7 @@
 #include "Pathfinder.hpp"
 #include "Timer.h"
 
+// Test for Pathfineder
 int main(int argc, char* argv[])
 {
 	Pathfinder p;
@@ -23,7 +24,7 @@ int main(int argc, char* argv[])
 	std::cout << "Starting output." << std::endl;
 	Timer t("find_path");
 	Path path = p.find_path(start, end);
-	std::cout << "paths:" << p.path_count << std::endl;
+	// //std::cout << "paths:" << p.path_count << std::endl;
 	// std::cout << "Path size: " << path.size() << std::endl;
-	// std::cout << "Path: " << path_to_string(path) << std::endl;
+	std::cout << "Path: " << path_to_string(path) << std::endl;
 }
