@@ -92,8 +92,13 @@ TODO:	-	memory: probably going to have to convert this to a loop approach later 
  */
 
 // pathfinding algorithm
-Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked)//, size_t current_size/*, std::string dir*/)
+Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked, size_t current_size/*, std::string dir*/)
 {
+	// if the path length is greater than the shortest path
+	// then there is no point in pursuing this path
+	// so we abandon this path
+	if(current_size > shortest_path)
+		return Path();
 	// creates path to be returned
 	Path final;
 	// we add the current position to the path
@@ -101,6 +106,7 @@ Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked)//, size_t cur
 	//	if the end point is reached return the path
 	if(pos == end) 
 	{
+		shortest_path = current_size;
 		return final;
 	}
 	//	if path leads to out of bounds return an empty path
@@ -122,13 +128,13 @@ Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked)//, size_t cur
 	// list paths which will contain the path checked in each direction
 	std::vector<Path> paths;
 	//	right
-	paths.push_back(find_path(Coords(pos.first+1,pos.second), end, check(pos, checked)));//, current_size + 1/*, dir+"r"*/));
+	paths.push_back(find_path(Coords(pos.first+1,pos.second), end, check(pos, checked), current_size + 1/*, dir+"r"*/));
 	//	left
-	paths.push_back(find_path(Coords(pos.first-1,pos.second), end, check(pos, checked)));//, current_size + 1/*, dir+"l"*/));
+	paths.push_back(find_path(Coords(pos.first-1,pos.second), end, check(pos, checked), current_size + 1/*, dir+"l"*/));
 	//	down
-	paths.push_back(find_path(Coords(pos.first,pos.second+1), end, check(pos, checked)));//, current_size + 1/*, dir+"u"*/));
+	paths.push_back(find_path(Coords(pos.first,pos.second+1), end, check(pos, checked), current_size + 1/*, dir+"u"*/));
 	//	up
-	paths.push_back(find_path(Coords(pos.first,pos.second-1), end, check(pos, checked)));//, current_size + 1/*, dir+"d"*/));
+	paths.push_back(find_path(Coords(pos.first,pos.second-1), end, check(pos, checked), current_size + 1/*, dir+"d"*/));
 
 	//	remove empty paths
 	for(size_t i = 0; i < paths.size(); i++)
@@ -160,8 +166,6 @@ Path	Pathfinder::find_path(Coords pos, Coords end, bool** checked)//, size_t cur
 	if(final[final.size()-1] == end)
 	{
 		// path_count++;
-		if(final.size() < shortest_path)
-			shortest_path = final.size();
 		return final;
 	}
 	//	else return empty path
@@ -321,32 +325,37 @@ double	distance(Coords start, Coords end)
 // geneerates the route to take
 Path	Pathfinder::generate()
 {
-	// creates a path and a tmp path
-	Path path, tmp;
+	// creates a path and a tmp path, and a list of items in the order we will pick them
+	Path path, tmp, items;
 	// gets coordinates to entrance
 	// TODO: update for multiple entry points
 	Coords	start = get_coords("Entrance");
 	// fill items with coords
 	fill_items();
-	// create a backup items 
-	Path	items = _items;
 	// print list of items for debugging
 	// std::cout << "items list: " << path_to_string(items) << "<br>" << std::endl;
 	// iterate through each item in the list
 	// until the ist is empty
+	std::clog << "Items to be found are located at: " << path_to_string(items) << std::endl;
 	while(_items.size() > 0)
 	{
 		// sort items by distance from entrance
 		sort_items_by_distance(start);
 		// find path to nearest item
 		tmp = find_path(start, _items[0]);
+		// add next waypoint
+		items.push_back(_items[0]);
 		// add path to final path
 		for(Coords coord: tmp)
 			path.push_back(coord);
 		// set path equal to point directly before item was reached
 		start = path[path.size()-2];
+		// go back 1 step
+		path.push_back(start);
 		// delete item from list
+		std::clog << "Found item located at: " << coord_to_string(_items[0]) << std::endl;
 		_items.erase(_items.begin());
+		shortest_path = 100000000;
 	}
 	// find exit path
 	tmp = find_path(start, get_coords("Exit"));
@@ -355,7 +364,7 @@ Path	Pathfinder::generate()
 			path.push_back(coord);
 	// update path
 	_path = path;
-	// restore item backup
+	// update items with sorted list
 	_items = items;
 	// return path
 	return path;
@@ -377,26 +386,37 @@ void	Pathfinder::mark_items()
 // draws the path to each item <HTML>
 void	Pathfinder::draw_path()
 {
+
 	// used to d=set random color; looked ugy so removed
-	// std::srand(std::time(nullptr));
+	std::srand(std::time(0));
 	// print out a buch of javascript to set up drawing lines
 	std::cout << std::endl
 	<<"var R = 0; var G = 0; var B = 0; var color = \'rgba(0,0,0,1)\';" << std::endl
 	<< "ctx.beginPath();" << std::endl;
 	std::cout << "ctx.lineWidth = " << _width << ";" << std::endl
 	<<	"ctx.moveTo(" << _path[0].first*map().scale() << ", " << _path[0].second*map().scale() <<");" << std::endl;
-	std::string color = "#FF63FF";
+	// std::string color = "#FF63FF";
 	// more javascript to draw lines
+	size_t j = 0;
 	for (size_t i = 1; i < _path.size(); i++)
 	{
+
 		std::cout << "ctx.lineTo(" << _path[i].first*map().scale() + map().scale()/2.0 << ", " << _path[i].second*map().scale() + map().scale()/2.0 << ");" << std::endl
-		<< "R = " << (255 - i*map().scale()) % 256 <<";" << std::endl
-		<< "G = " << 0<<";" << std::endl
-		<< "B = " << 255<<";" << std::endl
-		
-		<<	"color = \'rgba(\' + R + \', \' + G + \', \' + B + \', 1)\';" << std::endl
-		<<	"ctx.strokeStyle = " << "color" << ";" << std::endl
 		<<	"ctx.stroke(); ctx.closePath(); " << std::endl;
+		// change color
+		if(_items[j] == _path[i])
+		{
+			std::cout 	<< "ctx.font = \""<<map().scale()/2<<"px Arial\";\n"
+						<< "ctx.fillStyle = \"white\";\n"
+						// << "ctx.textAlign = \"center\";\n"
+						<< "ctx.fillText(\"" << j + 1 << "\", "<< _path[i].first*map().scale() + map().scale()/2.0 << ", " << _path[i].second*map().scale() + map().scale()/2.0 <<");";
+			std::cout	<< "R = " << rand() % 256 <<";" << std::endl
+						<< "G = " << rand() % 256 <<";" << std::endl
+						<< "B = " << rand() % 256 <<";" << std::endl
+						<<	"color = \'rgba(\' + R + \', \' + G + \', \' + B + \', 0.5)\';" << std::endl
+						<<	"ctx.strokeStyle = " << "color" << ";" << std::endl;
+			j++;
+		}
 		std::cout <<	"ctx.beginPath(); ctx.moveTo(" << _path[i].first*map().scale() + map().scale()/2.0 << ", " << _path[i].second*map().scale() + map().scale()/2.0 <<");" << std::endl;
 	}
 }

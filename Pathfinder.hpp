@@ -62,6 +62,10 @@ private:
 		4		F	F	F	F	F
 		
 	 */
+	//	path finding
+	bool	out_of_bounds(Coords pos, bool**checked);
+	bool	**check(Coords pos, bool **checked);
+	Path	find_path(Coords pos, Coords end, bool **checked = nullptr, size_t current_size = 1/*, std::string dir=""*/);
 	
 public:
 	// number of paths generated.
@@ -78,10 +82,6 @@ public:
 	void	readMap(std::string filename);
 	void	readInventory(std::string filename);
 	void	readCart(std::string filename);
-	//	path finding
-	Path	find_path(Coords pos, Coords end, bool **checked = nullptr);//, size_t current_size = 1/*, std::string dir=""*/);
-	bool	out_of_bounds(Coords pos, bool**checked);
-	bool	**check(Coords pos, bool **checked);
 	//	utility
 	// generates the path
 	Path	generate();

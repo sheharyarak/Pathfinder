@@ -6,7 +6,7 @@ int main(int argc, char* argv[])
 	// Creates Pathfinder object
 	Pathfinder p;
 	// read map
-	p.readMap("map.txt");
+	p.readMap("Map.tsv");
 	// debug statements
 	std::cout << "Map:" << std::endl;
 	p.map().printMap();
