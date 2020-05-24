@@ -1,7 +1,7 @@
 0	P	#Path
 1	X	# Wall or not a Path
-2	I	# Entrance or in route
-3	O	#Exit or out route
+2	Entrance	# Entrance or in route
+3	Exit	#Exit or out route
 4	B	# bathroom
 10	spoon
 11	radio
