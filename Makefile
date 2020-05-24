@@ -95,6 +95,18 @@ WebAppLin:
 	./Map.cgi.exe > Map.html
 	./Pathfinder.cgi.exe > Path.html
 
+# Makes the Web Application for Server
+WebAppServer:
+	make Pathfinder.exe
+	make Pathfinder.cgi
+	make Map.cgi
+	make Inventory.cgi
+	cp Pathfinder.cgi Map.cgi Inventory.cgi icon.png /var/www/cgi-bin/Pathfinder
+	cp Map.tsv Inventory.txt /var/www/cgi-bin/Pathfinder
+	./Inventory.cgi.exe > Inventory.html
+	./Map.cgi.exe > Map.html
+	./Pathfinder.cgi.exe > Path.html
+
 # Deletes all objects, dependancies, cgi, and executable files
 clean:
 	rm -f $(OBJS) $(POBJS) $(IOBJS) $(COBJS) $(MOBJS) $(EXE) $(MEXE) $(IEXE) $(PEXE) $(CGI) $(MGI) $(IGI) $(CGI).exe $(MGI).exe $(IGI).exe $(CGIOBJS) $(MGIOBJS) $(IGIOBJS) *.d

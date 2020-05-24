@@ -13,7 +13,7 @@ int		main()
 	std::cout	<<	"<body>" << std::endl;
 	// color body
 	ui.color_body();
-	std::cout	<<	"<form action=\"http://localhost:8080/cgi-bin/Pathfinder/Map.cgi\">" << std::endl
+	std::cout	<<	"<form action=\"http://pathfinder.johnwack.com/cgi-bin/Pathfinder/Map.cgi\">" << std::endl
 				<<	"<input type=\"hidden\" name=\"Inventory\" value=\"" << ui.param("Inventory") << "\">" << std::endl;
 	// checkbox list
 	ui.print_check_box_from_list(inv.get_inventory());

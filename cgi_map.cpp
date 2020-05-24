@@ -23,7 +23,7 @@ int		main()
 	// set body to random color
 	ui.color_body();
 	//// std::cout	<<	"<p>" << ui.get_query_string() << "</p>";
-	std::cout	<<	"	<form action=\"http://localhost:8080/cgi-bin/Pathfinder/Pathfinder.cgi\">" << std::endl;
+	std::cout	<<	"	<form action=\"http://pathfinder.johnwack.com/cgi-bin/Pathfinder/Pathfinder.cgi\">" << std::endl;
 	std::cout	<<	"		<input type=\"hidden\" name=\"Inventory\" value=\"" << ui.param("Inventory") << "\">" << std::endl;
 	//// std::cout	<<	"		<input type=\"hidden\" name=\"Cart\" value=\"" << "cart.txt" << "\">"  << std::endl;
 	std::cout	<<	"		<label><input type=\"radio\" name=\"Map\" value=\"" << "Map.tsv" << "\" id=\"" << "Map.tsv" << "\"" << ">Map.tsv</label>" << std::endl;
