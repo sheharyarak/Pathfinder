@@ -342,7 +342,7 @@ void		UI::print_html_header()
 		else if (_title == "Map")
 			_query_string = "Inventory=Inventory.txt&item=buckel&item=checkbook&item=drill+press&item=leg+warmers&item=sand+paper&item=spring&item=towel&item=white+out";
 		else
-			_query_string = "Inventory=Inventory.txt&Map=Map.tsv&item=buckel&item=checkbook&item=drill+press&item=leg+warmers&item=sand+paper&item=spring&item=towel&item=white+out";
+			_query_string = "Inventory=Inventory.txt&Map=Map.tsv&item=bookmark&item=candle&item=cat&item=drawer&item=face+wash&item=plastic+fork&item=radio&item=rusty+nail&item=screw&item=teddies&item=toothbrush&item=tv";
 	}
 	////~ _query_string = "Inventory=Inventory.txt&Cart=cart.txt&Map=Map.tsv";
 	// changes the '+' in the query string to a space
