@@ -1,30 +1,53 @@
-0	Path		#	Path must always be 0
-1	Wall		# 	Wall or not a Path
-2	Entrance	# 	Entrance or in route
-3	Exit		#	Exit or out route
-4	Bathroom	# 	bathroom just for realism
-10	bookmark									
-11	charger									
-12	spring									
-13	conditioner									
-14	towel									
-15	face wash									
-16	sailboat									
-17	tree									
-18	sand paper									
-19	clock									
-20	buckel									
-21	washing machine									
-22	drill press									
-23	white out									
-24	paint brush									
-25	key chain									
-26	blanket									
-27	leg warmers									
-28	sharpie									
-29	shoes									
-30	boom box									
-31	rubber duck									
-32	soy sauce packet									
-33	checkbook									
-34	lamp				
+0	P	#Path
+1	X	# Wall or not a Path
+2	I	# Entrance or in route
+3	O	#Exit or out route
+4	B	# bathroom
+10	spoon
+11	radio
+12	stop sign
+13	hair brush
+14	clay pot
+15	sandal
+16	outlet
+17	chocolate
+18	candle
+19	cat
+20	plastic fork
+21	buckel
+22	bread
+23	hanger
+24	pillow
+25	paper
+26	tv
+27	carrots
+28	rusty nail
+29	bookmark
+30	toothbrush
+31	keys
+32	drawer
+33	phone
+34	screw
+35	seat belt
+36	bottle
+37	fridge
+38	rug
+39	camera
+40	stockings
+41	soda can
+42	piano
+43	credit card
+44	face wash
+45	teddies
+46	USB drive
+47	television
+48	clothes
+49	remote
+50	drill press
+51	clamp
+52	flag
+53	deodorant
+54	shoe lace
+55	purse
+56	shovel
+57	sharpie

@@ -7,252 +7,12 @@
   <meta name="robots" content="noindex">
   <link rel = "icon" href = "icon.png" type="image/png" sizes="16x16">
   <title>Pathfinder</title>
-<style class="cp-pen-styles">
-.logo {
-  width: 8em;
-  position: absolute;
-  left: 1em;
-  top: 1em;
-}
-
-span {
-  display: block;
-  position: absolute;
-  top: calc(50% - 10em);
-  left: calc(50% - 10em);
-  width: 20em;
-  height: 20em;
-}
-
-span.spin {
-  -webkit-animation: spin 10s linear infinite;
-          animation: spin 10s linear infinite;
-}
-
-span.spin-reverse {
-  -webkit-animation: spin 30s linear infinite;
-          animation: spin 30s linear infinite;
-}
-
-span.pulse {
-  -webkit-animation: spin-pulse 20s linear infinite;
-          animation: spin-pulse 20s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotateZ(0);
-            transform: rotateZ(0);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-}
-
-@keyframes spin {
-  0% {
-    -webkit-transform: rotateZ(0);
-            transform: rotateZ(0);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg);
-            transform: rotateZ(360deg);
-  }
-}
-@-webkit-keyframes spin-pulse {
-  0% {
-    -webkit-transform: scale(1) rotateZ(0);
-            transform: scale(1) rotateZ(0);
-  }
-  50% {
-    -webkit-transform: scale(0.9) rotateZ(180deg);
-            transform: scale(0.9) rotateZ(180deg);
-  }
-  100% {
-    -webkit-transform: scale(1) rotateZ(360deg);
-            transform: scale(1) rotateZ(360deg);
-  }
-}
-@keyframes spin-pulse {
-  0% {
-    -webkit-transform: scale(1) rotateZ(0);
-            transform: scale(1) rotateZ(0);
-  }
-  50% {
-    -webkit-transform: scale(0.9) rotateZ(180deg);
-            transform: scale(0.9) rotateZ(180deg);
-  }
-  100% {
-    -webkit-transform: scale(1) rotateZ(360deg);
-            transform: scale(1) rotateZ(360deg);
-  }
-}
-body {
-  background: rgb(0, 0, 0);
-  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #fff;
-  font-size: 24px;
-}
+<style>
 .body-font {
   font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #fff;
-  font-size: 24px;
-}
-.circle {
-  border-radius: 50%;
-  left: calc(50% - 6.25em);
-  top: calc(50% - 12.5em);
-  -webkit-transform-origin: 50% 12.5em;
-          transform-origin: 50% 12.5em;
-}
-
-.squircle {
-  border-radius: 25%;
-}
-
-.circle, .squircle {
-  width: 12.5em;
-  height: 12.5em;
-  position: absolute;
-  border-top: 0.1em solid rgba(255, 255, 255, 0.4);
-}
-
-.large.circle {
-  box-shadow: 0 1em 2em rgba(0, 0, 0, 0.5);
-}
-
-.small {
-  width: 4em;
-  height: 4em;
-  left: calc(50% - 2em);
-  top: calc(50% - 15em);
-  -webkit-transform-origin: 50% 15em;
-          transform-origin: 50% 15em;
-  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.2);
-}
-
-.one {
-  background: rgba(16, 63, 236, 0.75);
-  -webkit-transform: rotateZ(225deg);
-          transform: rotateZ(225deg);
-}
-
-.two {
-  background: rgba(37, 172, 162, 0.75);
-  -webkit-transform: rotateZ(180deg);
-          transform: rotateZ(180deg);
-}
-
-.three {
-  background: rgba(233, 124, 32, 0.75);
-  -webkit-transform: rotateZ(135deg);
-          transform: rotateZ(135deg);
-}
-
-.four {
-  background: rgba(235, 67, 35, 0.75);
-  -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
-}
-
-.five {
-  background: rgba(190, 28, 65, 0.75);
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
-}
-
-.six {
-  background: rgba(208, 57, 159, 0.75);
-  -webkit-transform: rotateZ(0);
-          transform: rotateZ(0);
-}
-
-.seven {
-  background: rgba(150, 32, 198, 0.75);
-  -webkit-transform: rotateZ(-45deg);
-          transform: rotateZ(-45deg);
-}
-
-.eight {
-  background: rgba(95, 33, 203, 0.75);
-  -webkit-transform: rotateZ(-90deg);
-          transform: rotateZ(-90deg);
-}
-
-.small.squircle {
-  background: none;
-  box-shadow: none;
-}
-.small.squircle::after {
-  content: "";
-  border-radius: 25%;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: red;
-  -webkit-transform: rotateZ(-45deg);
-          transform: rotateZ(-45deg);
-  box-shadow: -0.25em 0.25em 0.5em rgba(0, 0, 0, 0.2);
-}
-.small.squircle.two::after {
-  background: rgba(37, 172, 162, 0.75);
-}
-.small.squircle.four::after {
-  background: rgba(235, 67, 35, 0.75);
-}
-.small.squircle.six::after {
-  background: rgba(208, 57, 159, 0.75);
-}
-.small.squircle.eight::after {
-  background: rgba(95, 33, 203, 0.75);
-}
-
-.large.squircle {
-  position: absolute;
-  background: rgba(30, 7, 66, 0.65);
-  border: none;
-  left: calc(50% - 7.5em);
-  top: calc(50% - 7.5em);
-  width: 15em;
-  height: 15em;
-  -webkit-transform: none;
-          transform: none;
-}
-.large.squircle.one {
-  -webkit-transform: rotateZ(45deg);
-          transform: rotateZ(45deg);
-}
-
-.content {
-  text-align: center;
-}
-.content svg {
-  fill: #fff;
-  width: 3em;
-  margin: 1.25em auto 1em;
-}
-.content h1 {
-  font-weight: lighter;
-  font-size: 1.75em;
-  margin: 0.25em auto 1em;
-  max-width: 6em;
-}
-
-.message {
-  position: absolute;
-  left: 1em;
-  bottom: 1em;
-  right: 0;
-  color: #222;
-  text-align: left;
-}
-.message a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #999;
-}
-</style>
+  /* font-size: 24px; */
+}</style>
 </head>
 <body>
  <script>
@@ -269,46 +29,94 @@ body {
     	random_bg_color();
 	});
  </script>
- <form action="http://localhost:8080/cgi-bin/Pathfinder/Inventory.cgi">
-	 <input type="hidden" name="Inventory" value="Inventory.txt">
-	 
-	 <article>
-		 <span class="spin">
-			 <!-- Large Circles -->
-			 <div class="large circle one"></div>
-			 <div class="large circle two"></div>
-			 <div class="large circle three"></div>
-			 <div class="large circle four"></div>
-			 <div class="large circle five"></div>
-			 <div class="large circle six"></div>
-			 <div class="large circle seven"></div>
-			 <div class="large circle eight"></div>
-			</span>
-			<span class="pulse">
-				<!-- Small Shapes -->
-				<div class="small circle one"></div>
-				<div class="small squircle two"></div>
-				<div class="small circle three"></div>
-				<div class="small squircle four"></div>
-				<div class="small circle five"></div>
-				<div class="small squircle six"></div>
-				<div class="small circle seven"></div>
-				<div class="small squircle eight"></div>
-			</span>
-			<!-- Squircles -->
-			<span class="spin-reverse">
-				<div class="large squircle one"></div>
-			</span>
-			<div class="large squircle two">
-				<button type="submit" style="align-items: center; width: 100%; height: 100%; align-self: center; border-color: transparent; background-color: transparent;">
-				<div class="content" style="border-color: transparent; border-width: 4px;">
-					<image src="icon.png" style="height: 66%; width: 66%; opacity: 100%; position: flex; justify-self: center;"></image>
-				</div>
-				<p class="body-font"><strong>Pathfinder</strong><sup>&alpha;</sup></p>
-			</button>
-			</div>
-		</article>
-</form>
-<footer>Made by Sheharyar Khan, Suraj Shah, and Xiuying Li</footer>
+ <div class="row">
+   <span class="col-sm-2"></span>
+   <span class="col-sm-8">
+     <div class="body-font" style="height: 100%; width: 100%;">
+       <h3 style="text-align: center;"><strong>Mission</strong></h1>
+        <p style="text-align: center;">
+          Due to the pandemic grocery stores have become extremely unsafe and its best to order things online.
+          However, not everyone can afford such luxuries. The Pathfinder project is for the people that need to
+          risk their lives to get supplies for survival.
+        </p>
+     </div>
+      </span>
+      <span class="col-sm-2"></span>
+</div>
+<div class="row">
+  <span class="col-sm-4"></span>
+  <span class="col-sm-4">
+    <form action="http://localhost:8080/cgi-bin/Pathfinder/Inventory.cgi">
+      <input type="hidden" name="Inventory" value="Inventory.txt">
+      <button type="submit" style="align-items: center; width: 100%; height: 100%; align-self: center; border-color: transparent; background-color: transparent;">
+        <image id="start" src="icon.png" style="width: 100%; height: 100%;"></image>
+        <h1 class="body-font"><strong>Pathfinder</strong><sup>&alpha;</sup></h1>
+      </button>
+    </form>
+  </span>
+  <span class="col-sm-4"></span>
+</div>
+<div class="row">
+  <span class="col-sm-6"></span>
+</div>
+<div class="row">
+  <span class="col-sm-2"></span>
+  <span class="col-sm-8" >
+    <div class="body-font">
+      <h3 style="text-align: center;"><strong>Solution</strong></h1>
+        <p style="text-align: center;">
+          An application that lets you fill your cart in like you would on Amazon
+          and then it would find the shortest path from the entrance, to all your items, to the exit.
+          This would minimize the time spent in the store thus decreasing the risk of infection.
+        </p>
+    </div>
+      </span>
+    <span class="col-sm-2"></span>
+</div>
+<div class="row">
+  <span class="col-sm-2"></span>
+  <span class="col-sm-8" >
+    <div class="body-font">
+      <h3 style="text-align: center;"><strong>Implementation</strong></h1>
+        <p style="text-align: center;">
+         Currently this program uses CGI to produce html pages to interact with a GUI.
+         I chose this approach as C++ is my strong suit and I learned CGI GUIs at Ohlone College.
+         I started off by writing a brute force algorithm that returns the shortest path after evaluating all routes.
+         I then optimized it so that once a the path being pursued exceeds the shortest path to the item, the path is abandoned.
+         This greatly improved the efficiency of the code.
+        </p>
+    </div>
+      </span>
+    <span class="col-sm-2"></span>
+</div>
+<div class="row">
+  <span class="col-sm-2"></span>
+  <span class="col-sm-8" >
+    <div class="body-font">
+      <h3 style="text-align: center;"><strong>Future Prospects</strong></h1>
+        <p style="text-align: center;">
+         I will keep working on this Project as I see its potential.
+         I hope to make the following changes:
+        </p>
+        <ul>
+          <li>Write a backend using NodeJS.</li>
+          <li>Completely rework the UI using React.</li>
+          <li>Rewrite the algorithm so that it uses loops instead of recursion in order to avoid stack overflow errors.</li>
+          <li>Get a more realistic map or partner with a store like walmart.</li>
+          <li>Refine the product and scale so that it can help millions of people.</li>
+        </ul>
+    </div>
+      </span>
+    <span class="col-sm-2"></span>
+</div>
+<div class="row">
+  <span class="col-sm-3"></span>
+  <span class="col-sm-6">
+    <p class="body-font">
+      <a href="#start">click the logo to begin, click here to go to the logo.</a>
+    </p>
+  </span>
+  <span class="col-sm-3"></span>
+</div>
 </body>
 </html>
